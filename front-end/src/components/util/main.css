@@ -1,0 +1,39 @@
+.header {
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.whyus {
+  border-radius: 30px;
+  padding: 70px;
+}
+
+.cards {
+  border-radius: 30px;
+  margin: auto;
+}
+
+.head {
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.card2 {
+  background-color: #eef0fc;
+}
+
+.card3 {
+  background-color: #eaf2ff;
+}
+
+.card4 {
+  background-color: #ffeaf3;
+}
+
+.card5 {
+  background-color: #f4f9f5;
+}
+
+.img3 {
+  border-radius: 15px;
+}
