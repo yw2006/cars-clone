@@ -19,7 +19,7 @@ import './Products.css';
    />
  ));
 
- const P_SedanItems = sedanData.map((item) => (
+ const P_SedanItems  = sedanData.map((item) => (
    <Product
      key={item.name}
      name={item.name}

@@ -29,6 +29,7 @@ export const stock = [
         power: '4.0 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: ' Diesel',
         manual_auto: "Manual",
+
     },
     {
         name: 'New GLC – 2023',
