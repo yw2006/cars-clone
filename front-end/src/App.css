@@ -1,7 +1,166 @@
-:root{
-  --main-back-color:#eef1fb;/* the main color used for backgrounds*/
-  --main-fill:#050b20;/*the main color that is used for texts and also use in some buttons and it is used for a card background most searched cars section*/
-  --btn-color1:#4260f3 /*used for some buttons*/;
-  --card-back1:#e9f2ff;/*used for a card and some buttons in card details*/
-  --card-back2:#ffe9f3;/*used for a card*/
+:root {
+  --main-back-color: #eef1fb; /* the main color used for backgrounds*/
+  --main-fill: #050b20; /*the main color that is used for texts and also use in some buttons and it is used for a card background most searched cars section*/
+  --btn-color1: #4260f3 /*used for some buttons*/;
+  --card-back1: #e9f2ff; /*used for a card and some buttons in card details*/
+  --card-back2: #ffe9f3; /*used for a card*/
+  --secondary-fill:#405ff2;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+.card-details-main {
+  height: 30vh;
+  background-color: var(--main-fill);
+}
+.card-details-content {
+  background-color: var(--main-back-color);
+  border-radius:7rem 7rem 0 0;
+  height: 92vh;
+}
+a {
+  text-decoration: none;
+}
+
+.path-details {
+  margin-top: 3rem;
+}
+.btn-cssbuttons {
+  padding: 16px 32px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: white;
+  background: none;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  filter: drop-shadow(0 2px 8px rgba(39, 94, 254, 0.32));
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.btn-cssbuttons::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: var(--btn-color1);
+  border-radius: 24px;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn-cssbuttons span,
+.btn-cssbuttons span span {
+  display: inline-flex;
+  vertical-align: middle;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn-cssbuttons span {
+  transition-delay: 0.05s;
+}
+
+.btn-cssbuttons span:first-child {
+  padding-right: 7px;
+}
+
+.btn-cssbuttons span span {
+  margin-left: 8px;
+  transition-delay: 0.1s;
+}
+
+.btn-cssbuttons ul {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  transform: translateY(-50%);
+}
+
+.btn-cssbuttons ul li {
+  flex: 1;
+}
+
+.btn-cssbuttons ul li a {
+  display: inline-flex;
+  vertical-align: middle;
+  transform: translateY(55px);
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn-cssbuttons ul li a:hover {
+  opacity: 0.5;
+}
+
+.btn-cssbuttons:hover::before {
+  transform: scale(1.2);
+}
+
+.btn-cssbuttons:hover span,
+.btn-cssbuttons:hover span span {
+  transform: translateY(-55px);
+}
+
+.btn-cssbuttons:hover ul li a {
+  transform: translateY(0);
+}
+
+.btn-cssbuttons:hover ul li:nth-child(1) a {
+  transition-delay: 0.15s;
+}
+
+.btn-cssbuttons:hover ul li:nth-child(2) a {
+  transition-delay: 0.2s;
+}
+
+.btn-cssbuttons:hover ul li:nth-child(3) a {
+  transition-delay: 0.25s;
+}
+.info-buttons button{
+  background-color: var(--card-back1);
+  color: var(--secondary-fill);
+  border:2px solid var(--secondary-fill);
+  padding: 0.4rem 1rem;
+  border-radius: 45%;
+  margin: 5px;
+}
+.modal-opener{
+  color: black;
+}
+.modal-opener:hover{
+  color: var(--btn-color1);
+  transition: 0.4s;
+}
+.modal-closer{
+  background-color: transparent !important;
+  border: 1px solid transparent;
+}
+
+.x:hover{
+  background-color: red;
+  border-radius: 50%;
+  transition: 0.4s;
+  color: white;
+}
+@media (max-width: 768px) {
+  .d-flex {
+    display: block !important;
+  }
+  .social {
+    padding-top: 1.2rem;
+  }
 }
