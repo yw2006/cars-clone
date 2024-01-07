@@ -64,7 +64,7 @@ export const stock = [
         miles: '2300miles',
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
-        manual_auto: "manual",
+        manual_auto: "automatic",
         category: "sedanData",
 
     },
@@ -94,13 +94,13 @@ export const stock = [
     },
     {
         id: '6',
-        name: 'BMW – New',
+        name: 'BMW X7– New',
         image: 'https://i.pinimg.com/236x/ae/d2/6c/aed26cd252fa99739aba563239c89a7a.jpg',
         price: '$58,000',
         miles: '2300 miles',
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
-        manual_auto: "manual",
+        manual_auto: "automatic",
         category: "sedanData",
 
     },
