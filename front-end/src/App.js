@@ -7,6 +7,7 @@ import Whychooseus from './components/util/Whychooseus.jsx'
 import Ourteam from './components/util/Ourteam.jsx'
 import Navbar from './components/Navbar.jsx'
 import Landing from './components/Landing.jsx'
+import Footer from './components/util/Footer.jsx'
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
       <Whoarewe/>
       <Whychooseus/>
       <Ourteam/>
+      <Footer/>
     </>
   );
 
