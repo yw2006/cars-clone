@@ -22,6 +22,7 @@ export const responsive = {
 
 export const stock = [
     {
+        id: '1',
         name: 'Ford Transit – 2021',
         image: 'https://i.pinimg.com/236x/09/e3/70/09e37078bc92d14515a91d1a5260e8ba.jpg',
         price: '$22,000',
@@ -29,9 +30,11 @@ export const stock = [
         power: '4.0 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: ' Diesel',
         manual_auto: "Manual",
+        category: "sedanData",
 
     },
     {
+        id: '2',
         name: 'New GLC – 2023',
         image: 'https://i.pinimg.com/236x/25/9b/07/259b072becf54e2a8de19814c1277d7f.jpg',
         price: '$95,000',
@@ -39,6 +42,8 @@ export const stock = [
         power: '4.0 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: 'automatic',
+        category: "sedanData",
+
     },
     {
         name: 'Audi A6 3.5 – New',
@@ -48,8 +53,11 @@ export const stock = [
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: "manual",
+        category: "sedanData",
+
     },
     {
+        id: '3',
         name: 'Audi A6 3.5 – New',
         image: 'https://i.pinimg.com/236x/91/20/5e/91205e32740069b054461f881e3003d2.jpg',
         price: '$58,000',
@@ -57,8 +65,11 @@ export const stock = [
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: "manual",
+        category: "sedanData",
+
     },
     {
+        id: '4',
         name: 'Audi A6 3.5 – New',
         image: 'https://i.pinimg.com/236x/6a/b1/7d/6ab17d14652614e1bbc5cb573cd0570b.jpg',
         price: '$58,000',
@@ -66,8 +77,11 @@ export const stock = [
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: "manual",
+        category: "sedanData",
+
     },
     {
+        id: '5',
         name: 'Audi A6 3.5 – New',
         image: 'https://i.pinimg.com/236x/32/58/1b/32581ba18f56fe098b96af32918d47ff.jpg',
         price: '$58,000',
@@ -75,8 +89,11 @@ export const stock = [
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: "manual",
+        category: "suvData",
+
     },
     {
+        id: '6',
         name: 'Audi A6 3.5 – New',
         image: 'https://i.pinimg.com/236x/ae/d2/6c/aed26cd252fa99739aba563239c89a7a.jpg',
         price: '$58,000',
@@ -84,8 +101,11 @@ export const stock = [
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: "manual",
+        category: "sedanData",
+
     },
     {
+        id: '7',
         name: 'Audi A6 3.5 – New',
         image: 'https://i.pinimg.com/236x/31/61/3d/31613dbffd8c9426ff6ad1c41e516b82.jpg',
         price: '$58,000',
@@ -93,8 +113,11 @@ export const stock = [
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: "manual",
+        category: "sedanData",
+
     },
     {
+        id: '8',
         name: 'Audi A6 3.5 – New',
         image: 'https://i.pinimg.com/236x/31/61/3d/31613dbffd8c9426ff6ad1c41e516b82.jpg',
         price: '$58,000',
@@ -102,8 +125,11 @@ export const stock = [
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: "manual",
+        category: "convertibleData",
+
     },
     {
+        id: '9',
         name: 'Audi A6 3.5 – New',
         image: 'https://i.pinimg.com/236x/31/61/3d/31613dbffd8c9426ff6ad1c41e516b82.jpg',
         price: '$58,000',
@@ -111,8 +137,11 @@ export const stock = [
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: "manual",
+        category: "suvData",
+
     },
     {
+        id: '10',
         name: 'Audi A6 3.5 – New',
         image: 'https://i.pinimg.com/236x/32/58/1b/32581ba18f56fe098b96af32918d47ff.jpg',
         price: '$58,000',
@@ -120,8 +149,11 @@ export const stock = [
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: "manual",
+        category: "sedanData",
+
     },
     {
+        id: '11',
         name: 'Audi A6 3.5 – New',
         image: 'https://i.pinimg.com/236x/2d/c5/eb/2dc5eb014df05e5e0276b7abfaf282f7.jpg',
         price: '$58,000',
@@ -129,8 +161,11 @@ export const stock = [
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: "manual",
+        category: "convertibleData",
+
     },
     {
+        id: '12',
         name: 'Audi A6 3.5 – New',
         image: 'https://i.pinimg.com/236x/48/e5/b2/48e5b22f234d2ade56d62ae7e3cc7dac.jpg',
         price: '$58,000',
@@ -138,8 +173,11 @@ export const stock = [
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: "manual",
+        category: "sedanData",
+
     },
     {
+        id: '13',
         name: 'Audi A6 3.5 – New',
         image: 'https://i.pinimg.com/236x/0e/9f/f8/0e9ff88b7d89f6a64460b67870f2a4dc.jpg',
         price: '$58,000',
@@ -147,8 +185,11 @@ export const stock = [
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: "manual",
+        category: "suvData",
+
     },
     {
+        id: '14',
         name: 'Audi A6 3.5 – New',
         image: 'https://i.pinimg.com/236x/6f/85/72/6f85728b4d1fb853f7fbfa82184e1403.jpg',
         price: '$58,000',
@@ -156,136 +197,8 @@ export const stock = [
         power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
         oil: 'petrol',
         manual_auto: "manual",
-    },
-];
+        category: "suvData",
 
-export const sedanData = [
-    {
-        name: 'Ford Transit – 2021',
-        image: 'https://i.pinimg.com/236x/60/78/96/607896ac25284a2857753548328d4024.jpg',
-        price: '$22,000',
-        miles: '2500 miles',
-        power: '4.0 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
-        oil: ' Diesel',
-        manual_auto: "Manual",
     },
-    {
-        name: 'New GLC – 2023',
-        image: 'https://i.pinimg.com/236x/c6/39/04/c6390466a7c2b99fd9795f4144ce135f.jpg',
-        price: '$95,000',
-        miles: '3000 miles',
-        power: '4.0 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
-        oil: 'petrol',
-        manual_auto: 'automatic',
-    },
-    {
-        name: 'Audi A6 3.5 – New',
-        image: 'https://i.pinimg.com/564x/e1/0b/fa/e10bfa4149faffb2bfcfc6993ebcfc7f.jpg',
-        price: '$58,000',
-        miles: '2300 miles',
-        power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
-        oil: 'petrol',
-        manual_auto: "manual",
-    },
-    {
-        name: 'Audi A6 3.5 – New',
-        image: 'https://i.pinimg.com/236x/37/13/4a/37134ae1076a200200c584b19acde9ea.jpg',
-        price: '$58,000',
-        miles: '2300 miles',
-        power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
-        oil: 'petrol',
-        manual_auto: "manual",
-    },
-
-    {
-        name: 'Audi A6 3.5 – New',
-        image: 'https://i.pinimg.com/236x/09/f8/30/09f830155b2d39d3da23f686c691ee3b.jpg',
-        price: '$58,000',
-        miles: '2300 miles',
-        power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
-        oil: 'petrol',
-        manual_auto: "manual",
-    },
-    {
-        name: 'Audi A6 3.5 – New',
-        image: 'https://i.pinimg.com/236x/7d/18/a1/7d18a126726fea538053deecf1a54d54.jpg',
-        price: '$58,000',
-        miles: '2300 miles',
-        power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
-        oil: 'petrol',
-        manual_auto: "manual",
-    },
-    {
-        name: 'Audi A6 3.5 – New',
-        image: 'https://i.pinimg.com/236x/d9/78/99/d97899539cbe525cd655a18d3dca0c98.jpg',
-        price: '$58,000',
-        miles: '2300 miles',
-        power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
-        oil: 'petrol',
-        manual_auto: "manual",
-    },
-    {
-        name: 'Audi A6 3.5 – New',
-        image: 'https://i.pinimg.com/236x/97/12/5e/97125e75a2ed614369c66a5f55109b14.jpg',
-        price: '$58,000',
-        miles: '2300 miles',
-        power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
-        oil: 'petrol',
-        manual_auto: "manual",
-    },
-
-];
-
-export const suvData = [
-    {
-        name: 'Ford Transit – 2021',
-        image: 'https://i.pinimg.com/236x/07/8f/b6/078fb61e97491766a8e5eac61a1f5b9b.jpg',
-        price: '$22,000',
-        miles: '2500 miles',
-        power: '4.0 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
-        oil: ' Diesel',
-        manual_auto: "Manual",
-    },
-    {
-        name: 'New GLC – 2023',
-        image: 'https://i.pinimg.com/236x/d1/22/c6/d122c6b06fc5eb43da30ec779e77cd41.jpg',
-        price: '$95,000',
-        miles: '3000 miles',
-        power: '4.0 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
-        oil: 'petrol',
-        manual_auto: 'automatic',
-    },
-    {
-        name: 'Audi A6 3.5 – New',
-        image: 'https://i.pinimg.com/236x/97/12/5e/97125e75a2ed614369c66a5f55109b14.jpg',
-        price: '$58,000',
-        miles: '2300 miles',
-        power: '4.5 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
-        oil: 'petrol',
-        manual_auto: "manual",
-    },
-
-];
-
-export const convertibleData = [
-    {
-        name: 'Ford Transit – 2021',
-        image: 'https://i.pinimg.com/236x/b5/1f/62/b51f6286dc7455f7fcb642f5890b24f0.jpg',
-        price: '$22,000',
-        miles: '2500 miles',
-        power: '4.0 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
-        oil: ' Diesel',
-        manual_auto: "Manual",
-    },
-    {
-        name: 'New GLC – 2023',
-        image: 'https://i.pinimg.com/236x/7d/56/8f/7d568fa9b915726317ca2207e102cb4a.jpg',
-        price: '$95,000',
-        miles: '3000 miles',
-        power: '4.0 D5 PowerPulse Momentum 5dr AWD Geartronic Estate',
-        oil: 'petrol',
-        manual_auto: 'automatic',
-    },
-
 ];
 

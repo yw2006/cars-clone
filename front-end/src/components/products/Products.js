@@ -4,59 +4,71 @@ import 'react-tabs/style/react-tabs.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Product } from "./Product";
-import { stock, sedanData, suvData, convertibleData, responsive } from "./data";
+import { stock, responsive } from "./data";
 import './Products.css';
- const ProductItems = stock.map((item) => (
-   <Product
-     key={item.name}
-     name={item.name}
-     image={item.image}
-     price={item.price}
-     power={item.power}
-     oil={item.oil}
-     miles={item.miles}
-     manual_auto={item.manual_auto}
-   />
- ));
+const ProductItems = stock.map((item) => (
+    <Product
+        key={item.name}
+        name={item.name}
+        image={item.image}
+        price={item.price}
+        power={item.power}
+        oil={item.oil}
+        miles={item.miles}
+        manual_auto={item.manual_auto}
+        id={item.id}
+    />
+));
 
- const P_SedanItems  = sedanData.map((item) => (
-   <Product
-     key={item.name}
-     name={item.name}
-     image={item.image}
-     price={item.price}
-     power={item.power}
-     oil={item.oil}
-     miles={item.miles}
-     manual_auto={item.manual_auto}
-   />
- ));
+const P_SedanItems = stock
+    .filter((item) => item.category === "sedanData")
+    .map((item) => (
+        <Product
+            key={item.id}
+            name={item.name}
+            image={item.image}
+            price={item.price}
+            power={item.power}
+            oil={item.oil}
+            miles={item.miles}
+            manual_auto={item.manual_auto}
+            id={item.id}
+        />
+    ));
 
- const P_SUVItems = suvData.map((item) => (
-   <Product
-     key={item.name}
-     name={item.name}
-     image={item.image}
-     price={item.price}
-     power={item.power}
-     oil={item.oil}
-     miles={item.miles}
-     manual_auto={item.manual_auto}
-   />
- ));
+const P_SUVItems = stock.filter((item) => item.category === "suvData").map((item) => (
+    < Product
+        key={item.name}
+        name={item.name}
+        image={item.image}
+        price={item.price}
+        power={item.power}
+        oil={item.oil}
+        miles={item.miles}
+        manual_auto={item.manual_auto}
+        id={item.id}
 
- const P_ConvertibleItems = convertibleData.map((item) => (
-   <Product
-     key={item.name}
-     name={item.name}
-     image={item.image}
-     price={item.price}
-     power={item.power}
-     oil={item.oil}
-     miles={item.miles}
-     manual_auto={item.manual_auto}
-   />
- ));
+    />
+
+))
+
+
+
+const P_ConvertibleItems = stock.filter((item) => item.category === "convertibleData").map((item) => (
+    < Product
+        key={item.name}
+        name={item.name}
+        image={item.image}
+        price={item.price}
+        power={item.power}
+        oil={item.oil}
+        miles={item.miles}
+        manual_auto={item.manual_auto}
+        id={item.id}
+
+    />
+))
+
 function Products() {
     const [tabIndex, setTabIndex] = useState(0);
     return (
