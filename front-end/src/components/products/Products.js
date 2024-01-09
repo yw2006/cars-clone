@@ -78,16 +78,16 @@ function Products() {
             <Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}>
                 <TabList className="nav nav-underline justify-content-center mb-4 mt-4">
                     <Tab className="nav-item">
-                        <a style={{ borderBottom: tabIndex === 0 ? '2px solid blue' : 'none', fontWeight: tabIndex === 0 ? 'normal' : 'normal' }} className={`nav-link ${tabIndex === 0 ? 'active' : ''}`} href="#">Stock</a>
+                        <a style={{ borderBottom: tabIndex === 0 ? '2px solid blue' : 'none', fontWeight: tabIndex === 0 ? 'normal' : 'normal' }} className={`nav-link ${tabIndex === 0 ? 'active' : ''}`} >Stock</a>
                     </Tab>
                     <Tab className="nav-item">
-                        <a style={{ borderBottom: tabIndex === 1 ? '2px solid blue' : 'none', fontWeight: tabIndex === 1 ? 'normal' : 'normal' }} className={`nav-link ${tabIndex === 1 ? 'active' : ''}`} href="#">Sedan</a>
+                        <a style={{ borderBottom: tabIndex === 1 ? '2px solid blue' : 'none', fontWeight: tabIndex === 1 ? 'normal' : 'normal' }} className={`nav-link ${tabIndex === 1 ? 'active' : ''}`} >Sedan</a>
                     </Tab>
                     <Tab className="nav-item">
-                        <a style={{ borderBottom: tabIndex === 2 ? '2px solid blue' : 'none', fontWeight: tabIndex === 2 ? 'normal' : 'normal' }} className={`nav-link ${tabIndex === 2 ? 'active' : ''}`} href="#">SUV</a>
+                        <a style={{ borderBottom: tabIndex === 2 ? '2px solid blue' : 'none', fontWeight: tabIndex === 2 ? 'normal' : 'normal' }} className={`nav-link ${tabIndex === 2 ? 'active' : ''}`} >SUV</a>
                     </Tab>
                     <Tab className="nav-item">
-                        <a style={{ borderBottom: tabIndex === 3 ? '2px solid blue' : 'none', fontWeight: tabIndex === 3 ? 'normal' : 'normal' }} className={`nav-link ${tabIndex === 3 ? 'active' : ''}`} href="#">Convertible</a>
+                        <a style={{ borderBottom: tabIndex === 3 ? '2px solid blue' : 'none', fontWeight: tabIndex === 3 ? 'normal' : 'normal' }} className={`nav-link ${tabIndex === 3 ? 'active' : ''}`} >Convertible</a>
                     </Tab>
                 </TabList>
 
