@@ -32,7 +32,7 @@ a {
 .path-details {
   margin-top: 3rem;
 }
-.button {
+.buttons {
   position: relative;
   width: 150px;
   height: 40px;
@@ -43,17 +43,17 @@ a {
   background-color: var(--btn-color1);
 }
 
-.button, .button__icon, .button__text {
+.buttons, .button__icon, .button__text {
   transition: all 0.3s;
 }
 
-.button .button__text {
+.buttons .button__text {
   transform: translateX(30px);
   color: #fff;
   font-weight: 600;
 }
 
-.button .button__icon {
+.buttons .button__icon {
   position: absolute;
   transform: translateX(109px);
   height: 100%;
@@ -64,29 +64,29 @@ a {
   justify-content: center;
 }
 
-.button .svg {
+.buttons .svg {
   width: 30px;
   stroke: #fff;
 }
 
-.button:hover {
+.buttons:hover {
   background: var(--btn-color1);
 }
 
-.button:hover .button__text {
+.buttons:hover .button__text {
   color: transparent;
 }
 
-.button:hover .button__icon {
+.buttons:hover .button__icon {
   width: 148px;
   transform: translateX(0);
 }
 
-.button:active .button__icon {
+.buttons:active .button__icon {
   background-color: var(--btn-color1);
 }
 
-.button:active {
+.buttons:active {
   border: 1px solid var(--btn-color1);
 }
 .info-buttons button{
