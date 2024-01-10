@@ -106,7 +106,7 @@ export default function CardDetails() {
               </div>
               {/* the social links */}
               <div className="social">
-                <button type="button" class="button">
+                <button type="button" class="buttons">
                   <span className="button__text">Book Now</span>
                   <span className="button__icon">
                     <svg
