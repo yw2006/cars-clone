@@ -106,7 +106,7 @@ export default function CardDetails() {
               </div>
               {/* the social links */}
               <div className="social">
-                <button type="button" class="buttons">
+                <a href={`/booknow/${details.id}`}><button type="button" class="buttons">
                   <span className="button__text">Book Now</span>
                   <span className="button__icon">
                     <svg
@@ -125,7 +125,7 @@ export default function CardDetails() {
                       <line y2="12" y1="12" x2="19" x1="5"></line>
                     </svg>
                   </span>
-                </button>
+                </button></a>
                 <h2 className="mt-3">{details.price}</h2>
                 {/* modl window */}
                 <div

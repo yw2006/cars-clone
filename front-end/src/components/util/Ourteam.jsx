@@ -1,8 +1,8 @@
 import React from 'react'
 import './main.css'
 function Ourteam() {
-    const personone = 'https://drive.google.com/uc?export=view&id=1mA7pwYP7dy4rFSdBVhYPl_vte-3OJF-7';
-    const persontwo = 'https://drive.google.com/uc?export=view&id=1QVVkKjMszxHSHtwFEPGO1QoiHfQtu-Yr';
+    const personone = 'https://www.transparentpng.com/thumb/man/rTkJ7v-man-png-image.png';
+    const persontwo = 'https://drive.google.com/uc?id=1QVVkKjMszxHSHtwFEPGO1QoiHfQtu-Yr';
     const personthree = 'https://drive.google.com/uc?export=view&id=1UOCMO2Z3hNsMR554UFn9-RuPZ0DhwiNZ';
     const personfour = 'https://drive.google.com/uc?export=view&id=11OTeVEZ_eg8MWFqlLAzztfS0aIFXD9kl';
     const personfive = 'https://drive.google.com/uc?export=view&id=1evjVcJrDsfvMfS1JbPQ6FI2QkLb4T3zA';
@@ -20,22 +20,22 @@ function Ourteam() {
                 <div className='col-md-2 text-center m-2 ml-3 cards m-auto card2 mt-3'>
                     <h5 className='mt-4'>Jerome Bell</h5>
                     <p>Software Developer</p>
-                    <img src={persontwo} className='w-100' alt="person two" />
+                    <img src={personone} className='w-100' alt="person two" />
                 </div>
                 <div className='col-md-2 text-center m-2 ml-3 cards m-auto card3 mt-3'>
                     <h5 className='mt-4'>Jerome Bell</h5>
                     <p>Software Tester</p>
-                    <img src={personthree} className='w-100 img3' alt="person three" />
+                    <img src={personone} className='w-100 img3' alt="person three" />
                 </div>
                 <div className='col-md-2 card4 text-center m-2 ml-3 cards m-auto mt-3'>
                     <h5 className='mt-4'>Arlene McCoy</h5>
                     <p>Software Developer</p>
-                    <img src={personfour} className='w-100 img3' alt="person four" />
+                    <img src={personone} className='w-100 img3' alt="person four" />
                 </div>
                 <div className='col-md-2 card5 text-center m-2 ml-3 cards m-auto mt-3'>
                     <h5 className='mt-4'>Jenny Wilson</h5>
                     <p>UI/UX Designer</p>
-                    <img src={personfive} className='w-100' alt="person five" />
+                    <img src={personone} className='w-100' alt="person five" />
                 </div>
             </div>
         </div>

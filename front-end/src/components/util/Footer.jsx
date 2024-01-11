@@ -1,32 +1,32 @@
 import React from 'react'
 import './main.css'
+export const VehiclesTypes = [
+    {
+        "type": "Sedan"
+    },
+    {
+        "type": "Hatchback"
+    },
+    {
+        "type": "SUV"
+    },
+    {
+        "type": "Hybird"
+    },
+    {
+        "type": "Electric"
+    },
+    {
+        "type": "Coupe"
+    },
+    {
+        "type": "Truck"
+    },
+    {
+        "type": "Convertible"
+    }
+]
 function Footer() {
-    const VehiclesTypes = [
-        {
-            "type": "Sedan"
-        },
-        {
-            "type": "Hatchback"
-        },
-        {
-            "type": "SUV"
-        },
-        {
-            "type": "Hybird"
-        },
-        {
-            "type": "Electric"
-        },
-        {
-            "type": "Coupe"
-        },
-        {
-            "type": "Truck"
-        },
-        {
-            "type": "Convertible"
-        }
-    ]
     return (
         <div className='row mt-5 p-3 h-100'>
             <hr />
