@@ -242,12 +242,12 @@ function Bookingform() {
                         <div className='col-xs-12'>
                             <h4 className='header text-center'>your order </h4>
                         </div>
-                        <div className='col-xs-12 m-auto text-center '>
+                        <div className='col-xs-12 m-auto '>
                             <h6>Name</h6>
                             <h6 className='d-inline  mt-3'>{bookdetails.name}</h6>
                         </div>
-                        <div className='col-xs-12 m-auto text-center '>
-                            <h6>Price</h6>
+                        <div className='col-xs-12 m-auto '>
+                            <h6>price</h6>
                             <h6 className='d-inline '> {bookdetails.price}</h6>
                         </div>
 
