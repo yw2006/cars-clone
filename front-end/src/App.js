@@ -5,6 +5,7 @@ import Details from './pages/Details';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Booknow from './components/Booknow';
+import BookingForm from './components/Bookingform';
 function App() {
   return (
     <Routes>
@@ -13,6 +14,7 @@ function App() {
       <Route path='/login' element={<Login/>} />
       <Route path='/signup' element={<Signup/>} />
       <Route path='/booknow/:id' element={<Booknow/>} />
+      <Route path='/bookingform/:id' element={<BookingForm/>}/>
     </Routes>
   );
 

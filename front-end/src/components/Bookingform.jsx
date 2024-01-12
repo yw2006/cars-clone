@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { stock } from './products/data';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './booknow.css';
 import { VehiclesTypes } from './util/Footer';
-function Booknow() {
+import { useEffect } from 'react';
+import { stock } from './products/data';
+import './booknow.css';
+
+function Bookingform() {
+    const handlePaymentMethodChange = (text) => {
+        document.getElementById("paymentDetails").innerHTML = text;
+    }
     const [bookdetails, setBookdetails] = useState([]);
     const { id } = useParams();
     const selectedItem = stock.find((item) => item.id === id);
@@ -11,6 +16,7 @@ function Booknow() {
         setBookdetails(selectedItem);
     }, [selectedItem]);
         return (
+
             <div className='card-details-main h-100 p-3'>
                 <nav class="navbar navbar-expand-lg navbar-dark nov mb-5">
                     <a class="navbar-brand" href="#">
@@ -77,68 +83,65 @@ function Booknow() {
                     <div className=' m-3 p-3'>
                         <div>
                             <a href="/" className='text-primary d-inline'>Home</a>
-                            <a className='booking-url text-dark'> / Booking</a>
+                            <a className='booking-url text-dark'> / Checkout</a>
                         </div>
                         <div className='row mt-2'>
-                            <h2 className='header col-1'>Booking</h2>
+                            <h2 className='header col-1'>Checkout</h2>
                         </div>
                     </div>
                     <div className='row m-3 pb-3 p-3 second'>
-                        <div className='col-md-8 thetable mb-5'>
-                            <table className='thetable p-3'>
-                                <thead className='titlediv p-5'>
-                                    <th className='n p-4'>
-                                        Image
-                                    </th>
-                                    <th className='n p-4'>
-                                        Car Name
-                                    </th>
-                                    <th className='n p-4'>
-                                        Price
-                                    </th>
-                                    <th className='n p-4'>
-                                        Total
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <td>
-                                        <img src={bookdetails.image} className='images m-auto mt-3' alt="" />
-                                    </td>
-                                    <td>
-                                        <h6>{bookdetails.name}</h6>
-                                    </td>
-                                    <td>
-                                        <h6 className='m-3 mb-4'>{bookdetails.price}</h6>
-                                    </td>
-                                    <td>
-                                        <h6 className='m-3 mb-4'>{bookdetails.price}</h6>
-                                    </td>
-                                </tbody>
-                            </table>
+                        <div className='col-md-8  mb-5'>
+
                         </div>
                         <div className='col-md-3 carttotal p-3 d-flex flex-column row'>
                             <div className='col-xs-12'>
-                                <h4 className='header text-center'>Booking Total</h4>
+                                <h4 className='header text-center'>your order </h4>
                             </div>
                             <div className='col-xs-12 m-auto text-center'>
-                                <h6 className='d-inline text-center mt-3'>Car Name</h6>
+                                <h6 className='d-inline text-center mt-3'>{bookdetails.name}</h6>
                             </div>
                             <div className='col-xs-12 m-auto text-center'>
-                            <h6 className='d-inline text-center'>{bookdetails.name}</h6>
+                                <h6 className='d-inline text-center'>{bookdetails.price}</h6>
                             </div>
+
                             <div className='col-xs-12 m-auto text-center'>
-                            <h6 className='d-inline text-center mt-3'>Total</h6>
-                            </div>
-                            <div className='col-xs-12 m-auto text-center'>
-                            <h6 className='d-inline text-center'>{bookdetails.price}</h6>
+                                <form>
+                                    <label>
+                                        <input type="radio" name="paymentMethod" value="directBankTransfer" onClick={() => handlePaymentMethodChange("Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.")}
+                                        />
+                                        Direct bank transfer
+                                    </label>
+                                    <br />
+
+                                    <label>
+                                        <input type="radio" name="paymentMethod" value="checkPayments" onClick={() => handlePaymentMethodChange("Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.")}
+                                        />
+                                        Check payments
+                                    </label>
+                                    <br />
+
+                                    <label>
+                                        <input type="radio" name="paymentMethod" value="cashOnDelivery" onClick={() => handlePaymentMethodChange("Pay with cash upon delivery.")}
+                                        />
+                                        Cash on delivery
+                                    </label>
+                                    <br />
+
+                                    <div id="paymentDetails" className="payment-details">
+
+                                    </div>
+
+
+
+                                </form>
                             </div>
                             <div className='col-xs-12 text-center'>
-                            <a href={`/bookingform/${bookdetails.id}`}><button className='w-100 btn btn-primary mt-4'>Continue Booking</button></a>
+                                <a href=''><button className='w-100 btn btn-primary mt-4'>place order</button></a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className='row mt-5 p-3 h-100'>
+
+                    <div className='row mt-5 p-3 h-100'>
                     <hr />
                     <div className='col-md-3 col-xs-12 mt-3 text-light'>
                         <h3 className='footerheader'>Company</h3>
@@ -200,6 +203,7 @@ function Booknow() {
                 </div>
 
             </div>
+            </div>
         )
     }
-export default Booknow
+export default Bookingform;
