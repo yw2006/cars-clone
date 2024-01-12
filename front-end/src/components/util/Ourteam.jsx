@@ -1,11 +1,11 @@
 import React from 'react'
 import './main.css'
 function Ourteam() {
-    const personone = 'https://www.transparentpng.com/thumb/man/rTkJ7v-man-png-image.png';
-    const persontwo = 'https://drive.google.com/uc?id=1QVVkKjMszxHSHtwFEPGO1QoiHfQtu-Yr';
-    const personthree = 'https://drive.google.com/uc?export=view&id=1UOCMO2Z3hNsMR554UFn9-RuPZ0DhwiNZ';
-    const personfour = 'https://drive.google.com/uc?export=view&id=11OTeVEZ_eg8MWFqlLAzztfS0aIFXD9kl';
-    const personfive = 'https://drive.google.com/uc?export=view&id=1evjVcJrDsfvMfS1JbPQ6FI2QkLb4T3zA';
+    const personone = 'https://i.ibb.co/HzYNdJg/person1.png';
+    const persontwo = 'https://i.ibb.co/xFw2mLS/person2.png';
+    const personthree = 'https://i.ibb.co/nBy2G57/person3.png';
+    const personfour = 'https://i.ibb.co/MgVNMsD/person4.png';
+    const personfive = 'https://i.ibb.co/Vp0fQMW/person5.png';
     return (
         <div className='bg-white mt-5'>
             <div className='row w-100'>
@@ -20,22 +20,22 @@ function Ourteam() {
                 <div className='col-md-2 text-center m-2 ml-3 cards m-auto card2 mt-3'>
                     <h5 className='mt-4'>Jerome Bell</h5>
                     <p>Software Developer</p>
-                    <img src={personone} className='w-100' alt="person two" />
+                    <img src={persontwo} className='w-100' alt="person two" />
                 </div>
                 <div className='col-md-2 text-center m-2 ml-3 cards m-auto card3 mt-3'>
                     <h5 className='mt-4'>Jerome Bell</h5>
                     <p>Software Tester</p>
-                    <img src={personone} className='w-100 img3' alt="person three" />
+                    <img src={personthree} className='w-100 img3' alt="person three" />
                 </div>
                 <div className='col-md-2 card4 text-center m-2 ml-3 cards m-auto mt-3'>
                     <h5 className='mt-4'>Arlene McCoy</h5>
                     <p>Software Developer</p>
-                    <img src={personone} className='w-100 img3' alt="person four" />
+                    <img src={personfour} className='w-100 img3' alt="person four" />
                 </div>
                 <div className='col-md-2 card5 text-center m-2 ml-3 cards m-auto mt-3'>
                     <h5 className='mt-4'>Jenny Wilson</h5>
                     <p>UI/UX Designer</p>
-                    <img src={personone} className='w-100' alt="person five" />
+                    <img src={personfive} className='w-100' alt="person five" />
                 </div>
             </div>
         </div>

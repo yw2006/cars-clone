@@ -1,9 +1,9 @@
 import React from 'react'
 import "./main.css";
 function Whoarewe() {
-  const g1 = 'https://drive.google.com/uc?export=view&id=1RPg_Pq-jRfw06TWI_xG7-SaHc684iVKj';
-  const g2 = 'https://drive.google.com/uc?export=view&id=173dXWImc19Y1ckV0GtUZCB5vplkIalDh';
-  const g3 = 'https://drive.google.com/uc?export=view&id=1_JOak3vTm-z8g0fxMK2NhrenvJ6k_2qW';
+  const g1 = 'https://i.ibb.co/P5CQLd8/g1.png';
+  const g2 = 'https://i.ibb.co/1XmnL7J/g2.png';
+  const g3 = 'https://i.ibb.co/2v7X0yS/g3.png';
   return (
     <div className='bg-primary mt-5 row g-3 whyus w-100 m-auto h-75 mb-5 mt-4'>
       <div className='col-3 col-sm-12 m-3 m-auto w-100 text-center'>
