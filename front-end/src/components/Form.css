@@ -1,0 +1,18 @@
+.seconddiv {
+    border-radius: 25px;
+    height: 800px;
+}
+
+.header {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.n {
+    color: #405ff2;
+}
+
+.error {
+    color: red;
+}
