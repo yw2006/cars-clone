@@ -238,8 +238,8 @@ function Bookingform() {
 
                         </form>
                     </div>
-                    <div className='col-md-3 carttotal p-3 d-flex flex-column row'>
-                        <div className='col-xs-12'>
+                    <div className='col-md-3 carttotal p-3 d-flex flex-column row text-center h-25'>
+                        <div className='col-xs-12 text-center'>
                             <h4 className='header text-center'>your order </h4>
                         </div>
                         <div className='col-xs-12 m-auto '>
@@ -250,51 +250,12 @@ function Bookingform() {
                             <h6>price</h6>
                             <h6 className='d-inline '> {bookdetails.price}</h6>
                         </div>
-
-                        <div className='col-xs-12 m-auto text-center'>
-                            <form>
-                                <div>
-                                    <label>
-                                        <input type="radio" name="paymentMethod" value="directBankTransfer" onClick={() => handlePaymentMethodChange("Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.")}
-                                        />
-                                        Direct bank transfer
-                                    </label>
-                                </div>
-                                <br />
-                                <div>
-                                    <label>
-
-                                        <input type="radio" name="paymentMethod" value="checkPayments" onClick={() => handlePaymentMethodChange("Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.")}
-                                        />
-                                        Check payments
-                                    </label>
-                                </div>
-                                <br />
-                                <div>
-                                    <label>
-                                        <input type="radio" name="paymentMethod" value="cashOnDelivery" onClick={() => handlePaymentMethodChange("Pay with cash upon delivery.")}
-                                        />
-                                        Cash on delivery
-                                    </label>
-                                </div>
-                                <br />
-
-                                <div id="paymentDetails" className="payment-details">
-
-                                </div>
-
-
-
-                            </form>
-                        </div>
                         <div className='col-xs-12 text-center'>
                             <a href=''><button type="submit" form="myForm" className='w-100 btn btn-primary mt-4'>place order</button></a>
                         </div>
                     </div>
                 </div>
             </div >
-
-
             <div className='row mt-5 p-3 h-100'>
                 <hr />
                 <div className='col-md-3 col-xs-12 mt-3 text-light'>

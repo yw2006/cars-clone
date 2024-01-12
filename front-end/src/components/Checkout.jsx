@@ -2,11 +2,17 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import { VehiclesTypes } from './util/Footer';
 import { useEffect } from 'react';
+import { useState } from 'react';
 import './Form.css';
-
+import { stock } from './products/data';
 function Checkout() {
-
-
+    const [bookdetails, setBookdetails] = useState([]);
+    const { id } = useParams();
+    const selectedItem = stock.find((item) => item.id === id);
+    const d = new Date()
+    useEffect(() => {
+        setBookdetails(selectedItem);
+    }, [selectedItem]);
     return (
         <div className='card-details-main h-100 p-3'>
             <nav class="navbar navbar-expand-lg navbar-dark nov mb-5">
@@ -91,18 +97,16 @@ function Checkout() {
                     </div>
 
                 </div>
-                <div className='col-md-3 carttotal p-4 d-flex flex-column row'>
+                <div className='col-md-3 carttotal p-4 d-flex flex-column row h-50'>
                     <div className='col-xs-12'>
                         <h4 className='header text-center'>Order details
                         </h4>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item mt-2">product:</li>
-                        <li class="list-group-item mt-4">total:</li>
-                        <li class="list-group-item mt-4">Date:</li>
-                        <li class="list-group-item mt-4">Order Number:</li>
-                        <li class="list-group-item mt-4">Payment Method:</li>
-
+                        <li class="list-group-item mt-2"><b>Product:</b> {bookdetails.name}</li>
+                        <li class="list-group-item mt-4"><b>Total:</b> {bookdetails.price}</li>
+                        <li class="list-group-item mt-4"><b>Date:</b> {d.getMonth()+1}/{d.getDate()}/{d.getFullYear()}</li>
+                        <li class="list-group-item mt-4"><b>Order Number:</b> 6809</li>
                     </ul>
                 </div>
 

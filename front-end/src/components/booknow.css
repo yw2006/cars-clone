@@ -23,10 +23,11 @@
 .carttotal{
     border: solid 1px;
     border-radius: 20px;
+    margin: auto;
 }
 .second{
     padding-bottom: 50px;
 }
 .seconddiv{
-    height: 90vh;
+    height: 70vh;
 }
