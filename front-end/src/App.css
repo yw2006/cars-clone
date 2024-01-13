@@ -350,9 +350,11 @@ a {
 }
 
 .cut-short {
-  width: 50px;
+  width: 60px;
 }
-
+.cut-long {
+  width: 110px;
+}
 .iLabel {
   color: #65657b;
   font-family: sans-serif;
@@ -395,15 +397,16 @@ a {
   width: 100%;
 }
 
-.submit:active {
-  background-color: #06b;
-}
 @media (max-width: 768px) {
   .d-flex {
     display: block !important;
   }
   .social {
     padding-top: 1.2rem;
+  }
+  .doubled-input{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
   }
 
 }
