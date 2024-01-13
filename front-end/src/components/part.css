@@ -1,0 +1,7 @@
+.place{
+margin-inline-start: 40%;
+}
+.search-btn{
+    display: grid;
+    place-content: end;
+}

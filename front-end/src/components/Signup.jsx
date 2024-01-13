@@ -1,7 +1,7 @@
 import React from "react";
 export default function Signup() {
   return (
-    <div className="login-cont">
+    <div className="login-container">
       <div className="form2">
         <div className="text-center">
 
@@ -27,6 +27,41 @@ export default function Signup() {
           <div className="cut cut-short" />
           <label className="iLabel" htmlFor="email">
             Email
+          </label>
+        </div>
+        <div className="input-container ic2">
+          <input placeholder="" type="password" className="input" id="password" />
+          <div className="cut cut-short" />
+          <label className="iLabel" htmlFor="password">
+           password
+          </label>
+        </div>
+        <div className="input-container ic2">
+          <input placeholder="" type="password" className="input" id="password2" />
+          <div className="cut cut-short" />
+          <label className="iLabel" htmlFor="password2">
+            confirm password
+          </label>
+        </div>
+        <div className="input-container ic2">
+          <input placeholder="" type="date" className="input" id="age" />
+          <div className="cut cut-short" />
+          <label className="iLabel" htmlFor="age">
+            age
+          </label>
+        </div>
+        <div className="input-container ic2">
+          <input placeholder="" type="text" className="input" id="address" />
+          <div className="cut cut-short" />
+          <label className="iLabel" htmlFor="addres">
+            address 
+          </label>
+        </div>
+        <div className="input-container ic2">
+          <input placeholder="" type="text" className="input" id="second-address" />
+          <div className="cut cut-short" />
+          <label className="iLabel" htmlFor="second-address">
+            second-address
           </label>
         </div>
         

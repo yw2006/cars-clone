@@ -196,6 +196,12 @@ a {
   place-items: center;
   background-color: var(--main-back-color);
 }
+.login-container{
+  height: 130vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--main-back-color);
+}
 .form-container {
   width: 320px;
   border-radius: 0.75rem;
@@ -325,9 +331,9 @@ a {
   background-color: var(--main-fill);
   border-radius: 20px;
   box-sizing: border-box;
-  height: 500px;
+  
   padding: 20px;
-  width: 420px;
+  width: 42%;
 }
 
 .title {
