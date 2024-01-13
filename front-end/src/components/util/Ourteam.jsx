@@ -1,11 +1,11 @@
 import React from 'react'
 import './main.css'
 function Ourteam() {
-    const personone = 'https://drive.google.com/uc?export=view&id=1mA7pwYP7dy4rFSdBVhYPl_vte-3OJF-7';
-    const persontwo = 'https://drive.google.com/uc?export=view&id=1QVVkKjMszxHSHtwFEPGO1QoiHfQtu-Yr';
-    const personthree = 'https://drive.google.com/uc?export=view&id=1UOCMO2Z3hNsMR554UFn9-RuPZ0DhwiNZ';
-    const personfour = 'https://drive.google.com/uc?export=view&id=11OTeVEZ_eg8MWFqlLAzztfS0aIFXD9kl';
-    const personfive = 'https://drive.google.com/uc?export=view&id=1evjVcJrDsfvMfS1JbPQ6FI2QkLb4T3zA';
+    const personone = 'https://i.ibb.co/HzYNdJg/person1.png';
+    const persontwo = 'https://i.ibb.co/xFw2mLS/person2.png';
+    const personthree = 'https://i.ibb.co/nBy2G57/person3.png';
+    const personfour = 'https://i.ibb.co/MgVNMsD/person4.png';
+    const personfive = 'https://i.ibb.co/Vp0fQMW/person5.png';
     return (
         <div className='bg-white mt-5'>
             <div className='row w-100'>

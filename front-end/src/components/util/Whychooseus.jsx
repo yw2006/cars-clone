@@ -1,10 +1,10 @@
 import React from 'react'
 import "./main.css";
 function Whychooseus() {
-    const one = 'https://drive.google.com/uc?export=view&id=1Olz283yHNSnyw4blNXmNlF34NizGEwnZ';
-    const two = 'https://drive.google.com/uc?export=view&id=1P-iZnzAj_PGGL_EUNDqXjFNeZyXKPSiJ';
-    const three = 'https://drive.google.com/uc?export=view&id=1RNdABddashvAYCqkjP1U0CAQb2o0TETH';
-    const four = 'https://drive.google.com/uc?export=view&id=1M2a0lGZEa9663HniVEHmIrbhUmczrtWm';
+    const one = 'https://i.ibb.co/Msbn5Cn/1.png';
+    const two = 'https://i.ibb.co/JcbNjw5/2.png';
+    const three = 'https://i.ibb.co/wgnXKK3/3.png';
+    const four = 'https://i.ibb.co/yfrm3Qt/5.png';
     return (
         <div className='bg-light p-3'>
             <h1 className='header text-center'>Why Choose Us?</h1>
