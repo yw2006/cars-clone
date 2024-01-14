@@ -34,11 +34,17 @@ function Bookingform() {
         if (!formData.firstName.trim()) {
             newErrors.firstName = 'First Name is required';
             isValid = false;
+        } else if (!/^[A-Za-z]+$/.test(formData.firstName.trim())) {
+            newErrors.firstName = 'First Name should contain only letters';
+            isValid = false;
         }
 
         // Validation for Last Name
         if (!formData.lastName.trim()) {
             newErrors.lastName = 'Last Name is required';
+            isValid = false;
+        } else if (!/^[A-Za-z]+$/.test(formData.lastName.trim())) {
+            newErrors.lastName = 'Last Name should contain only letters';
             isValid = false;
         }
 
@@ -51,6 +57,9 @@ function Bookingform() {
         // Validation for Phone
         if (!formData.phone.trim()) {
             newErrors.phone = 'Phone is required';
+            isValid = false;
+        } else if (!/^[0-9]+$/.test(formData.phone.trim())) {
+            newErrors.phone = 'Phone should contain only numbers';
             isValid = false;
         }
 
@@ -66,6 +75,7 @@ function Bookingform() {
         setErrors(newErrors);
         return isValid;
     };
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
