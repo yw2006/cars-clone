@@ -4,14 +4,8 @@ import LandingIM from "./util/images/landing.png";
 function Landing() {
   return (
     <>
-      <div
-        className="container-fluid"
-        data-id="1c909e2"
-        data-element_type="widget"
-        data-settings='{"_animation":"slide-up","_animation_delay":400}'
-        data-widget_type="image.default"
-      >
-        <div className="container-fluid bg-light">
+      <div className="container-fluid  mb-5">
+        <div className="container-fluid bg-light pt-5">
           <p className="text-secondary text-center pt-5">find cars for sale</p>
           <p className="h1 text-center">find your dream car</p>
           <div className="container rounded-5 w-75 justify-content-center">
@@ -75,7 +69,7 @@ function Landing() {
                   <input type="range" name="" id="" className="m-2 " />
                   <p className="m-2">100000$</p>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 search-btn">
                   <button className="btn btn-primary search-button" type="submit">
                     Search
                   </button>

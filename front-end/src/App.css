@@ -154,6 +154,12 @@ a {
   place-items: center;
   background-color: var(--main-back-color);
 }
+.login-container{
+  height: 130vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--main-back-color);
+}
 .form-container {
   width: 320px;
   border-radius: 0.75rem;
@@ -283,9 +289,9 @@ a {
   background-color: var(--main-fill);
   border-radius: 20px;
   box-sizing: border-box;
-  height: 500px;
+  
   padding: 20px;
-  width: 420px;
+  width: 42%;
 }
 
 .title {
@@ -344,9 +350,11 @@ a {
 }
 
 .cut-short {
-  width: 50px;
+  width: 60px;
 }
-
+.cut-long {
+  width: 110px;
+}
 .iLabel {
   color: #65657b;
   font-family: sans-serif;
@@ -389,15 +397,16 @@ a {
   width: 100%;
 }
 
-.submit:active {
-  background-color: #06b;
-}
 @media (max-width: 768px) {
   .d-flex {
     display: block !important;
   }
   .social {
     padding-top: 1.2rem;
+  }
+  .doubled-input{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
   }
 
 }
