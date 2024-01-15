@@ -4,7 +4,7 @@ import { VehiclesTypes } from './util/Footer';
 import { useEffect } from 'react';
 import { stock } from './products/data';
 import './Form.css';
-
+import './util/print.css'
 function Bookingform() {
     const handlePaymentMethodChange = (text) => {
         document.getElementById("paymentDetails").innerHTML = text;

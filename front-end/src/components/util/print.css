@@ -1,0 +1,15 @@
+@media print {
+   .printHidden{
+    display: none;
+   }
+   .printContent{
+    margin-top: 10px;
+   }
+   title {
+    display: none;
+   }
+   @page { margin: 0; }
+  body { margin: 1.6cm;
+    margin-top: 150px; 
+}
+}
