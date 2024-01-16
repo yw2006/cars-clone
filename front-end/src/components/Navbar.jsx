@@ -2,7 +2,7 @@ import React from "react";
 function Navbar() {
   return (
     <>
-      <div className="container-fluid fixed-top" data-id="1c909e2" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slide-up&quot;,&quot;_animation_delay&quot;:400}" data-widget_type="image.default">
+      <div className="container-fluid fixed-top">
         <nav className="navbar navbar-expand-lg navbar-light bg-white">
           <div className="container-fluid ">
             <a className="navbar-brand justify-content-start" href="#">cars</a>
