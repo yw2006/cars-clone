@@ -65,9 +65,34 @@ function Landing() {
                   </select>
                 </div>
                 <div className="col-md-3  d-inline-flex">
-                  <p className="m-2">1000$</p>
-                  <input type="range" name="" id="" className="m-2 " />
-                  <p className="m-2">100000$</p>
+                <select className="form-select" aria-placeholder="model">
+                    <option value="used" className="">
+                      0 : 100,000
+                    </option>
+                    <option value="used" className="">
+                      100,000 : 250,000
+                    </option>
+                    <option value="used" className="">
+                      250,000 : 500,000
+                    </option>
+                    <option value="used" className="">
+                      500,000 : 750,000
+                    </option>
+                    <option value="used" className="">
+                      750,000 : 1,500,000
+                    </option>
+                    <option value="used" className="">
+                      1,500,000 : 3,000,000
+                    </option>
+                    <option value="used" className="">
+                      3,000,000 : 10,000,000
+                    </option>
+                    <option value="used" className="">
+                      10,000,000 : 20,000,000
+                    </option>
+                    
+                    
+                  </select>
                 </div>
                 <div className="col-md-3 search-btn">
                   <button className="btn btn-primary search-button" type="submit">
