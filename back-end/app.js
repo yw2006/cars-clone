@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import userRouter from "./routes/userRoutes.js";
 import carsRouter from "./routes/carsRoutes.js";
 import { addCustomer } from "./utils/database.js";
+import cors from 'cors'
 //config
 const app = express()
 configDotenv()
