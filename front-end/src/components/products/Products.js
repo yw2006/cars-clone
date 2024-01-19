@@ -6,6 +6,7 @@ import 'react-multi-carousel/lib/styles.css';
 import { Product } from "./Product";
 import { stock, responsive } from "./data";
 import './Products.css';
+
 const ProductItems = stock.map((item) => (
     <Product
         key={item.name}
@@ -71,6 +72,7 @@ const P_ConvertibleItems = stock.filter((item) => item.category === "convertible
 
 function Products() {
     const [tabIndex, setTabIndex] = useState(0);
+
     return (
         <div className="products">
             <h1 className='header'>The Most Searched Cars</h1>
@@ -115,6 +117,7 @@ function Products() {
                     </Carousel>
                 </TabPanel>
             </Tabs>
+            <a href='/AllProducts' className='btn btn-dark ml-3'>All Products</a>
         </div>
     );
 }

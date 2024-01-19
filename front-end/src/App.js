@@ -7,6 +7,7 @@ import Signup from './components/Signup';
 import Booknow from './components/Booknow';
 import BookingForm from './components/Bookingform';
 import Checkout from './components/Checkout';
+import AllProducts from './components/products/AllProducts';
 function App() {
   return (
     <Routes>
@@ -17,6 +18,9 @@ function App() {
       <Route path='/booknow/:id' element={<Booknow />} />
       <Route path='/bookingform/:id' element={<BookingForm />} />
       <Route path='/checkout/:id' element={<Checkout />} />
+      <Route path='/AllProducts' element={<AllProducts />} />
+
+
 
     </Routes>
   );
