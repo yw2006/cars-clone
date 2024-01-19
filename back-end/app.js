@@ -3,10 +3,12 @@ import { configDotenv } from "dotenv";
 import bcrypt from "bcrypt";
 import userRouter from "./routes/userRoutes.js";
 import { addCustomer } from "./utils/database.js";
+import cors from 'cors'
 //config
 const app=express()
 configDotenv()
 // middlewares
+app.use(cors());
 app.use(express.json())
 // routes 
 
