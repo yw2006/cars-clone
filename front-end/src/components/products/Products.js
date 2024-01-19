@@ -1,76 +1,77 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Product } from "./Product";
-import { stock, responsive } from "./data";
+import { responsive } from "./data";
 import './Products.css';
+import { useEffect, useState } from "react";
+import axios from 'axios';
 
-const ProductItems = stock.map((item) => (
-    <Product
-        key={item.name}
-        name={item.name}
-        image={item.image}
-        price={item.price}
-        power={item.power}
-        oil={item.oil}
-        miles={item.miles}
-        manual_auto={item.manual_auto}
-        id={item.id}
-    />
-));
 
-const P_SedanItems = stock
-    .filter((item) => item.category === "sedanData")
-    .map((item) => (
+function Products() {
+    const [cars, setCars] = useState([]);
+    const getData = async () => {
+        const response = await axios.get("http://localhost:5000/cars")
+        setCars(response.data)
+        console.log(response.data)
+    }
+    useEffect(() => {
+        getData()
+    }, [])
+    const ProductItems = cars && cars.map((item) => (
         <Product
-            key={item.id}
+            key={item.car_id}
             name={item.name}
             image={item.image}
             price={item.price}
-            power={item.power}
-            oil={item.oil}
-            miles={item.miles}
-            manual_auto={item.manual_auto}
-            id={item.id}
+            car_id={item.car_id}
+            description={item.description}
         />
     ));
 
-const P_SUVItems = stock.filter((item) => item.category === "suvData").map((item) => (
-    < Product
-        key={item.name}
-        name={item.name}
-        image={item.image}
-        price={item.price}
-        power={item.power}
-        oil={item.oil}
-        miles={item.miles}
-        manual_auto={item.manual_auto}
-        id={item.id}
+    const P_SedanItems = cars && cars
+        .filter((item) => item.category === "sedan")
+        .map((item) => (
+            <Product
+                key={item.car_id}
+                name={item.name}
+                image={item.image}
+                price={item.price}
+                car_id={item.car_id}
+                description={item.description}
+            />
+        ));
 
-    />
+    const P_SUVItems = cars && cars.filter((item) => item.category === "SUV").map((item) => (
+        < Product
+            key={item.car_id}
+            name={item.name}
+            image={item.image}
+            price={item.price}
+            car_id={item.car_id}
+            description={item.description}
 
-))
+        />
+
+    ))
 
 
 
-const P_ConvertibleItems = stock.filter((item) => item.category === "convertibleData").map((item) => (
-    < Product
-        key={item.name}
-        name={item.name}
-        image={item.image}
-        price={item.price}
-        power={item.power}
-        oil={item.oil}
-        miles={item.miles}
-        manual_auto={item.manual_auto}
-        id={item.id}
+    const P_ConvertibleItems = cars && cars.filter((item) => item.category === "convertible").map((item) => (
+        < Product
+            key={item.car_id}
+            name={item.name}
+            image={item.image}
+            price={item.price}
+            car_id={item.car_id}
+            description={item.description}
 
-    />
-))
+        />
+    ))
 
-function Products() {
+
     const [tabIndex, setTabIndex] = useState(0);
 
     return (
@@ -117,7 +118,9 @@ function Products() {
                     </Carousel>
                 </TabPanel>
             </Tabs>
-            <a href='/AllProducts' className='btn btn-dark ml-3'>All Products</a>
+            <div style={{ textAlign: 'center', marginTop: '10px' }}>
+                <a href='/AllProducts' className='btn btn-dark'>All Products</a>
+            </div>
         </div>
     );
 }
