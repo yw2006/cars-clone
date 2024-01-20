@@ -37,7 +37,9 @@ export default function Login() {
     const res=await axios.post("http://localhost:5000/signin",{email,password});
     console.log(res);
     localStorage.setItem("token", res.data.token);
-    
+    sessionStorage.setItem("address_1",res.data.data.address_1);
+    sessionStorage.setItem("address_2", res.data.data.address_2);
+    sessionStorage.setItem("costumer_id", res.data.data.id);
     // Clear form fields after successful submission (optional)
     setEmailname("");
     setPassword("");

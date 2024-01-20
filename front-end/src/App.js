@@ -23,10 +23,13 @@ function App() {
       <Route element={<Protect/>}>
         <Route path="/booknow/:id" element={<Booknow />} />
         <Route path="/bookingform/:id" element={<BookingForm />} />
-        <Route path="/checkout/:id" element={<Checkout />} />
+        .
+        <Route path="/checkout/:id/:order_id" element={<Checkout />} />
       </Route>
       <Route path="/AllProducts" element={<AllProducts />} />
       <Route path="/search/:model/:price" element={<Search />} />
+      <Route elemen={<>
+      </>}/>
     </Routes>
   );
 

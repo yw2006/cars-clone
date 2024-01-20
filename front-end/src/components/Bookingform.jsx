@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Await, useParams } from "react-router-dom";
+import { Await, Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { VehiclesTypes } from "./util/Footer";
 import { useEffect } from "react";
 import { stock } from "./products/data";
@@ -22,35 +22,42 @@ function Bookingform() {
     }
 
 }
-  const [cars, setCars] = useState({});
   useEffect(() => {
     getData();
   }, []);
   // console.log(cars)
-  const [formData, setFormData] = useState({
-    addressone: "",
-    addresstwo: "",
-  });
 
   const [errors, setErrors] = useState({});
-
+  const [order_id, setOrder_id] = useState();
+  const [address_1, setAddress_1] = useState(
+    sessionStorage.getItem("address_1")
+  );
+  const handleChangeAddress_1 = (e) => {
+    setAddress_1(e.target.value);
+  };
+  const [address_2, setAddress_2] = useState(
+    sessionStorage.getItem("address_2")
+  );
+  const handleChangeAddress_2 = (e) => {
+    setAddress_2(e.target.value);
+  };
   const validateForm = () => {
     let isValid = true;
     const newErrors = {};
 
     // Validation for First Name
-    if (!formData.addressone.trim()) {
+    if (!address_1?.trim()) {
       newErrors.addressone = "Address one is required";
       isValid = false;
-    } else if (!/^[A-Za-z0-9]+$/.test(formData.addressone.trim())) {
-      newErrors.addressone = "Address should contain letters and numbers";
+    } else if (!/^[A-Za-z]+$/.test(address_2)) {
+      newErrors.addressone = "Address should contain letters ";
       isValid = false;
     }
 
     // Validation for Last Name
-    if (formData.addresstwo) {
-      if (!/^[A-Za-z0-9]+$/.test(formData.addresstwo.trim())) {
-        newErrors.addresstwo = "address two should contain letters and numbers";
+    if (address_2) {
+      if (!/^[a-z]+$/.test(address_2)) {
+        newErrors.addresstwo = "address two should contain letters";
         isValid = false;
       }
     }
@@ -82,36 +89,26 @@ function Bookingform() {
     setErrors(newErrors);
     return isValid;
   };
-
-  const [alldata, setAlldata] = useState({
-    formData: formData,
-    cars: cars,
-  });
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-    setAlldata({
-      ...formData,
-      [name]: value,
-      ...cars,
-      cars,
-    });
-  };
+  const navigetor=useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // Your form submission logic here
-      console.log("Form submitted successfully!");
-      console.log(alldata.cars);
+      // Your form submission logic her
       try {
+        const alldata = {
+          price: bookdetails.price,
+          customer_id: sessionStorage.getItem("costumer_id"),
+          address_1: address_1,
+          address_2: address_2,
+        };
+        
         const res = await axios.post(
-          `http://localhost:5000/checkout/${bookdetails.id}`,
+          `http://localhost:5000/checkout/${bookdetails.car_id}`,
           alldata
         );
-        console.log(res);
+        console.log(res.data);
+
+        navigetor(`/checkout/${bookdetails.car_id}/${res.data.id}`);
       } catch (err) {
         console.log("error in posting", err);
       }
@@ -203,8 +200,8 @@ function Bookingform() {
                   className="form-control w-50"
                   type="text"
                   name="addressone"
-                  value={formData.addressone}
-                  onChange={handleChange}
+                  value={address_1}
+                  onChange={handleChangeAddress_1}
                 />
                 <div className="error">{errors.addressone}</div>
               </div>
@@ -215,8 +212,8 @@ function Bookingform() {
                   className="form-control w-50"
                   type="text"
                   name="addresstwo"
-                  value={formData.addresstwo}
-                  onChange={handleChange}
+                  value={address_2}
+                  onChange={handleChangeAddress_2}
                 />
                 <div className="error">{errors.addresstwo}</div>
               </div>
@@ -287,6 +284,7 @@ function Bookingform() {
                 type="submit"
                 form="myForm"
                 className="w-100 btn btn-primary mt-4"
+                
               >
                 Book Now
               </button>

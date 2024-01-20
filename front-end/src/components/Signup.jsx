@@ -90,7 +90,10 @@ export default function Signup() {
     // Continue with your signup logic
     // ...
     const res=await axios.post("http://localhost:5000/signup",{name,age:getAge(age),email,phone,password,address_1:address,address_2:secondAddress,gender});
-    console.log(res);
+    localStorage.setItem("token", res.data.token);
+    sessionStorage.setItem("address_1", res.data.data.address_1);
+    sessionStorage.setItem("address_2", res.data.data.address_2);
+    sessionStorage.setItem("costumer_id", res.data.data.costumer_id);
 
     // Clear form fields after successful submission (optional)
     setName("");

@@ -36,7 +36,15 @@ validate
     });  
     console.log(created)
     if (created.affectedRows != 0) {
-      res.status(201).json({  token:generateJwt({email}),messsage: "created  sussefly" });
+      res.status(201).json({
+        token: generateJwt({ email }),
+        messsage: "created  sussefly",
+        data: {
+          costumer_id: created[0].insertId,
+          address_1,
+          address_2,
+        },
+      });
       return;
     }
    res.status(400).json({ messsage: "has a problem when you create user" });
