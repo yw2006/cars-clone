@@ -61,7 +61,10 @@ export const makeorder = async (alldata) => {
   );
   return res;
 }
-export const getspecificcar = async (carid)=>{
-  const res = await DBConnection.query(`SELECT * FROM cars WHERE car_id = ${carid}`)
+export const updateaddress = async (address_1,address_2,id)=>{
+  const res = await DBConnection.query(
+    "UPDATE `customer` SET `address_1`=?,`address_2`=? WHERE customer_id = ?",
+    [address_1,address_2,id]
+  );
   return res;
 }

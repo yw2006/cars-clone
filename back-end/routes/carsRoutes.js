@@ -23,12 +23,3 @@ router.post('/checkout/:id',async(req,res) => {
     }
 })
 export default router;
-router.get('/cars/:id',async(req,res)=>{
-    try {
-        const carid = req.params.id
-        const specificcar = await getspecificcar(carid)
-        res.json(specificcar)
-    } catch (err) {
-        console.log('error in getting specific car',err)
-    }
-})
