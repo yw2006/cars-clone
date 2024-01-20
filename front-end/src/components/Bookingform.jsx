@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Await, useParams } from 'react-router-dom';
 import { VehiclesTypes } from './util/Footer';
 import { useEffect } from 'react';
 import { stock } from './products/data';
 import './Form.css';
 import './util/print.css'
+import axios, { all } from 'axios'
 function Bookingform() {
     const handlePaymentMethodChange = (text) => {
         document.getElementById("paymentDetails").innerHTML = text;
@@ -14,14 +15,20 @@ function Bookingform() {
     const selectedItem = stock.find((item) => item.id === id);
     useEffect(() => {
         setBookdetails(selectedItem);
-    }, [selectedItem]);
+    }, [selectedItem]);  
+    const [cars, setCars] = useState({});
+    const getData = async () => {
+        const response = await axios.get(`http://localhost:5000/cars/${id}`)
+        setCars(response.data)
+
+    }
+    useEffect(() => {
+        getData()
+    }, [])
+    // console.log(cars)
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        companyName: '',
-        zipCode: '',
-        phone: '',
-        email: '',
+        addressone: '',
+        addresstwo: '',
     });
 
     const [errors, setErrors] = useState({});
@@ -31,76 +38,86 @@ function Bookingform() {
         const newErrors = {};
 
         // Validation for First Name
-        if (!formData.firstName.trim()) {
-            newErrors.firstName = 'First Name is required';
+        if (!formData.addressone.trim()) {
+            newErrors.addressone = 'Address one is required';
             isValid = false;
-        } else if (!/^[A-Za-z]+$/.test(formData.firstName.trim())) {
-            newErrors.firstName = 'First Name should contain only letters';
+        } else if (!/^[A-Za-z0-9]+$/.test(formData.addressone.trim())) {
+            newErrors.addressone = 'Address should contain letters and numbers';
             isValid = false;
         }
 
         // Validation for Last Name
-        if (!formData.lastName.trim()) {
-            newErrors.lastName = 'Last Name is required';
-            isValid = false;
-        } else if (!/^[A-Za-z]+$/.test(formData.lastName.trim())) {
-            newErrors.lastName = 'Last Name should contain only letters';
-            isValid = false;
+        if (formData.addresstwo) {
+            if (!/^[A-Za-z0-9]+$/.test(formData.addresstwo.trim())) {
+                newErrors.addresstwo = 'address two should contain letters and numbers';
+                isValid = false;
+            }
         }
 
         // Validation for ZIP Code
-        if (!formData.zipCode.trim()) {
-            newErrors.zipCode = 'ZIP Code is required';
-            isValid = false;
-        }
+        // if (!formData.zipCode.trim()) {
+        //     newErrors.zipCode = 'ZIP Code is required';
+        //     isValid = false;
+        // }
 
-        // Validation for Phone
-        if (!formData.phone.trim()) {
-            newErrors.phone = 'Phone is required';
-            isValid = false;
-        } else if (!/^[0-9]+$/.test(formData.phone.trim())) {
-            newErrors.phone = 'Phone should contain only numbers';
-            isValid = false;
-        }
+        // // Validation for Phone
+        // if (!formData.phone.trim()) {
+        //     newErrors.phone = 'Phone is required';
+        //     isValid = false;
+        // } else if (!/^[0-9]+$/.test(formData.phone.trim())) {
+        //     newErrors.phone = 'Phone should contain only numbers';
+        //     isValid = false;
+        // }
 
-        // Validation for Email
-        if (!formData.email.trim()) {
-            newErrors.email = 'Email is required';
-            isValid = false;
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-            newErrors.email = 'Invalid email address';
-            isValid = false;
-        }
+        // // Validation for Email
+        // if (!formData.email.trim()) {
+        //     newErrors.email = 'Email is required';
+        //     isValid = false;
+        // } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+        //     newErrors.email = 'Invalid email address';
+        //     isValid = false;
+        // }
 
         setErrors(newErrors);
         return isValid;
     };
 
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        if (validateForm()) {
-            // Your form submission logic here
-            console.log('Form submitted successfully!');
-            window.location.href = `/checkout/${bookdetails.id}`;
-
-        } else {
-            console.log('Form has validation errors. Please check and try again.');
-        }
-    };
-
+    const [alldata, setAlldata] = useState({
+        formData: formData,
+        cars: cars,
+    })
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
             [name]: value,
         });
+        setAlldata({
+            ...formData, [name]: value,
+            ...cars, cars
+        })
     };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (validateForm()) {
+            // Your form submission logic here
+            console.log('Form submitted successfully!');
+            console.log(alldata.cars)
+            try {
+                const res = await axios.post(`http://localhost:5000/checkout/${bookdetails.id}`, alldata)
+                console.log(res)
+            } catch (err) {
+                console.log('error in posting', err)
+            }
+
+        } else {
+            console.log('Form has validation errors. Please check and try again.');
+        }
+    }
     return (
 
-        <div className='card-details-main h-100 p-3'>
-            <nav class="navbar navbar-expand-lg navbar-dark nov mb-5">
+        <div className='card-details-main h-50 p-3'>
+            <nav className="navbar navbar-expand-lg navbar-dark nov mb-5">
                 <a class="navbar-brand" href="#">
                     Navbar
                 </a>
@@ -173,31 +190,31 @@ function Bookingform() {
                 </div>
                 <div className='row m-3 pb-3 p-3 second'>
                     <div className='col-md-8  mb-5'>
-                        <form onSubmit={handleSubmit} id="myForm">
+                        <form onSubmit={handleSubmit} id="myForm" method='POST'>
                             <div className="form-group">
-                                <label>First Name:</label>
+                                <label>Address One:</label>
                                 <input
                                     className="form-control w-50"
                                     type="text"
-                                    name="firstName"
-                                    value={formData.firstName}
+                                    name="addressone"
+                                    value={formData.addressone}
                                     onChange={handleChange}
                                 />
-                                <div className="error">{errors.firstName}</div>
+                                <div className="error">{errors.addressone}</div>
                             </div>
 
                             <div className="form-group">
-                                <label>Last Name:</label>
+                                <label>Address two (optional):</label>
                                 <input
                                     className="form-control w-50"
                                     type="text"
-                                    name="lastName"
-                                    value={formData.lastName}
+                                    name="addresstwo"
+                                    value={formData.addresstwo}
                                     onChange={handleChange}
                                 />
-                                <div className="error">{errors.lastName}</div>
+                                <div className="error">{errors.addresstwo}</div>
                             </div>
-
+                            {/* 
                             <div className="form-group">
                                 <label>Company Name (optional):</label>
                                 <input
@@ -206,10 +223,10 @@ function Bookingform() {
                                     name="companyName"
                                     value={formData.companyName}
                                     onChange={handleChange}
-                                />
-                                {/* No validation error message for optional field */}
-                            </div>
-
+                                /> */}
+                            {/* No validation error message for optional field */}
+                            {/* </div> */}
+                            {/* 
                             <div className="form-group">
                                 <label>ZIP Code:</label>
                                 <input
@@ -232,8 +249,8 @@ function Bookingform() {
                                     onChange={handleChange}
                                 />
                                 <div className="error">{errors.phone}</div>
-                            </div>
-
+                            </div> */}
+                            {/* 
                             <div className="form-group">
                                 <label>Email address:</label>
                                 <input
@@ -242,26 +259,26 @@ function Bookingform() {
                                     name="email"
                                     value={formData.email}
                                     onChange={handleChange}
-                                />
-                                <div className="error">{errors.email}</div>
-                            </div>
+                                /> */}
+                            {/* <div className="error">{errors.email}</div> */}
+                            {/* </div> */}
 
                         </form>
                     </div>
                     <div className='col-md-3 carttotal p-3 d-flex flex-column row text-center h-25'>
                         <div className='col-xs-12 text-center'>
-                            <h4 className='header text-center'>your order </h4>
+                            <h4 className='header text-center'>Your Order </h4>
                         </div>
                         <div className='col-xs-12 m-auto '>
                             <h6>Name</h6>
-                            <h6 className='d-inline  mt-3'>{bookdetails.name}</h6>
+                            <h6 className='d-inline  mt-3'>{}</h6>
                         </div>
                         <div className='col-xs-12 m-auto '>
                             <h6>price</h6>
-                            <h6 className='d-inline '> {bookdetails.price}</h6>
+                            <h6 className='d-inline '> { }</h6>
                         </div>
                         <div className='col-xs-12 text-center'>
-                            <a href=''><button type="submit" form="myForm" className='w-100 btn btn-primary mt-4'>place order</button></a>
+                            <button type="submit" form="myForm" className='w-100 btn btn-primary mt-4'>Book Now</button>
                         </div>
                     </div>
                 </div>

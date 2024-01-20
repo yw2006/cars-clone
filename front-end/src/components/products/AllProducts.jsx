@@ -14,6 +14,7 @@ function AllProducts() {
     }
     useEffect(() => {
         getData()
+        console.log(cars)
     }, [])
 
     return (

@@ -35,7 +35,7 @@ export const addCustomer = async ({
   gender,
 }) => {
   const res = await DBConnection.query(
-    "INSERT INTO `customer`( `name`, `age`, `password`, `email`, `phone`, `address_1`, `address_2`, `gender`) VALUES (?,?,?,?,?,?,?,?)",
+    "INSERT INTO `customer`( `name`, `age`, `password`, `email`, `phone`, `address_1`, `address_2`, `gender`,`created_at`	) VALUES (?,?,?,?,?,?,?,?,null)",
     [name, age, passwordHashing, email, phone, address_1, address_2, gender]
   );
   return res;
@@ -44,6 +44,7 @@ export const getcars = async () => {
   const res = await DBConnection.query("SELECT * FROM `cars` ");
   return res[0];
 };
+
 export const getDetails = async (id) => {
   const query = "SELECT * FROM `cars` WHERE car_id=?";
   try {
@@ -70,3 +71,21 @@ export async function searchCars(selectedModel, selectedPrice) {
 // searchCars("sedan",400000 )
 
 // getDetails(3)
+
+export const find= async (email)=>{
+const res= await DBConnection.query('SELECT `customer_id`, `password`, `email`, `address_1`, `address_2` FROM `customer` WHERE email=?',[email])
+return res[0];
+}
+
+export const makeorder = async (alldata) => {
+  const res = await DBConnection.query(
+    "INSERT INTO `order`(`order_price`, `quantity`, `customer_id`, `car_id`,`created_at`) VALUES (?,?,?,?,?)",
+    [alldata.cars[0][0].price,1,9,alldata.cars[0][0].car_id,null]
+  );
+  return res;
+}
+export const getspecificcar = async (carid)=>{
+  const res = await DBConnection.query(`SELECT * FROM cars WHERE car_id = ${carid}`)
+  return res;
+}
+
