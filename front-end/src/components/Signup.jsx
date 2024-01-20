@@ -8,7 +8,7 @@ export default function Signup() {
           <div className="subtitle">Let's create your account!</div>
         </div>
         <div className="input-container ic1">
-          <input placeholder="" type="text" className="input" id="name" />
+          <input placeholder="" type="text" className="input" id="name"  />
           <div className="cut cut-short" />
           <label className="iLabel" htmlFor="name">
             Name

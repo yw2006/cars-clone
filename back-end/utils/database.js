@@ -36,7 +36,7 @@ export const addCustomer = async ({
   gender,
 }) => {
   const res = await DBConnection.query(
-    "INSERT INTO `customer`( `name`, `age`, `password`, `email`, `phone`, `address_1`, `address_2`, `gender`) VALUES (?,?,?,?,?,?,?,?)",
+    "INSERT INTO `customer`( `name`, `age`, `password`, `email`, `phone`, `address_1`, `address_2`, `gender`,`created_at`	) VALUES (?,?,?,?,?,?,?,?,null)",
     [name, age, passwordHashing, email, phone, address_1, address_2, gender]
   );
   return res;
@@ -49,6 +49,10 @@ export const getcars = async () => {
   return res[0];
 
 };
+export const find= async (email)=>{
+const res= await DBConnection.query('SELECT `customer_id`, `password`, `email`, `address_1`, `address_2` FROM `customer` WHERE email=?',[email])
+return res[0];
+}
 
 
 
