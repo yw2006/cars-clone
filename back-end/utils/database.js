@@ -50,6 +50,14 @@ export const getcars = async () => {
 
 };
 
-
-
-
+export const makeorder = async (alldata) => {
+  const res = await DBConnection.query(
+    "INSERT INTO `order`(`order_price`, `quantity`, `customer_id`, `car_id`,`created_at`) VALUES (?,?,?,?,?)",
+    [alldata.cars[0][0].price,1,9,alldata.cars[0][0].car_id,null]
+  );
+  return res;
+}
+export const getspecificcar = async (carid)=>{
+  const res = await DBConnection.query(`SELECT * FROM cars WHERE car_id = ${carid}`)
+  return res;
+}
