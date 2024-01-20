@@ -134,7 +134,7 @@ function Search() {
               {items &&
                 items.map((item) => {
                   return (
-                    <div className="col-md-4  mb-5 " key={item.car_id}>
+                    <div className="col-md-4  mb-5 mt-5 " key={item.car_id}>
                       <div
                         className="card mt-2 serach-card"
                         style={{
