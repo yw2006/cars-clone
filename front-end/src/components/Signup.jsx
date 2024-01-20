@@ -116,7 +116,7 @@ export default function Signup() {
 
         <div className="input-container ic1">
           <input
-            placeholder=""
+            placeholder=" "
             type="text"
             className="input"
             id="name"
@@ -132,7 +132,7 @@ export default function Signup() {
 
         <div className="input-container ic2">
           <input
-            placeholder=""
+            placeholder=" "
             type="text"
             className="input"
             id="phone"
@@ -148,7 +148,7 @@ export default function Signup() {
 
         <div className="input-container ic2">
           <input
-            placeholder=""
+            placeholder=" "
             type="text"
             className="input"
             id="email"
@@ -165,7 +165,7 @@ export default function Signup() {
         <div className="d-flex">
           <div className="input-container ic2">
             <input
-              placeholder=""
+              placeholder=" "
               type="password"
               className="input"
               id="password"
@@ -181,7 +181,7 @@ export default function Signup() {
 
           <div className="input-container ic2 mx-2 doubled-input">
             <input
-              placeholder=""
+              placeholder=" "
               type="password"
               className="input"
               id="password2"
@@ -200,7 +200,7 @@ export default function Signup() {
 
         <div className="input-container ic2">
           <input
-            placeholder=""
+            placeholder=" "
             type="date"
             className="input"
             id="age"
@@ -213,7 +213,7 @@ export default function Signup() {
         <div className="d-flex">
           <div className="input-container ic2">
             <input
-              placeholder=""
+              placeholder=" "
               type="text"
               className="input"
               id="address"
@@ -229,7 +229,7 @@ export default function Signup() {
 
           <div className="input-container ic2 mx-2 doubled-input">
             <input
-              placeholder=""
+              placeholder=" "
               type="text"
               className="input"
               id="second-address"
