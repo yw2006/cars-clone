@@ -355,7 +355,7 @@ a {
   width: 60px;
 }
 .cut-long {
-  width: 110px;
+  width: 116px;
 }
 .iLabel {
   color: #65657b;
@@ -397,6 +397,23 @@ a {
   margin-top: 38px;
   text-align: center;
   width: 100%;
+}
+.iLabel {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 15px;
+}
+
+.input:not(:placeholder-shown) ~ .iLabel,
+.input:focus ~ .iLabel {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+  color: var(--secondary-fill);
 }
 .card-details-main-search{
   background-color: var(--main-fill);
