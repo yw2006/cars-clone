@@ -286,7 +286,7 @@ export default function CardDetails() {
                                                 </svg>{" "}
                                                 Fuel Type
                                             </td>
-                                            <td>{details.oil}</td>
+                                            <td>{details.type}</td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -318,7 +318,7 @@ export default function CardDetails() {
                                                 </svg>{" "}
                                                 Transmission
                                             </td>
-                                            <td>{details.manual_auto}</td>
+                                            <td>{details.transmission}</td>
                                         </tr>
                                         <tr>
                                             <td>
