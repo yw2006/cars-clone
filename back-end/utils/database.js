@@ -1,4 +1,4 @@
-import mysql2 from 'mysql2'
+import mysql2 from "mysql2";
 import { configDotenv } from "dotenv";
 configDotenv();
 const createDBConnection = async () => {
@@ -15,7 +15,6 @@ const createDBConnection = async () => {
 
     console.log("Connected to the database!");
 
-
     return connection;
   } catch (error) {
     console.error("Error connecting to the database:", error.message);
@@ -23,7 +22,7 @@ const createDBConnection = async () => {
   }
 };
 
-const DBConnection = await createDBConnection()
+const DBConnection = await createDBConnection();
 // add customer to my database
 export const addCustomer = async ({
   name,
@@ -42,14 +41,32 @@ export const addCustomer = async ({
   return res;
 };
 export const getcars = async () => {
-  const res = await DBConnection.query(
-    "SELECT * FROM `cars` ",
-
-  );
+  const res = await DBConnection.query("SELECT * FROM `cars` ");
   return res[0];
-
 };
+export const getDetails = async (id) => {
+  const query = "SELECT * FROM `cars` WHERE car_id=?";
+  try {
+    const response = await DBConnection.query(query, [id]);
+    return response[0];
+  } catch (error) {
+    console.error("Error executing query:", error);
+    throw error;
+  }
+};
+export async function searchCars(selectedModel, selectedPrice) {
+  const query = `
+    SELECT *
+    FROM cars
+    WHERE category = ? AND price <= ?
+  `;
+  const results = await DBConnection.query(query, [
+    selectedModel,
+    selectedPrice,
+  ]);
+  console.log(results);
+  return results[0];
+}
+// searchCars("sedan",400000 )
 
-
-
-
+// getDetails(3)

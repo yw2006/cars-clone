@@ -126,9 +126,11 @@ function AllProducts() {
                                     </div>
                                 </div >
                             </div>
+                            
                         )
                     })
                 }
+                
             </div>
 
             <div className='row mt-5 p-3 h-100'>

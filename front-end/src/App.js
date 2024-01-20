@@ -8,6 +8,7 @@ import Booknow from './components/Booknow';
 import BookingForm from './components/Bookingform';
 import Checkout from './components/Checkout';
 import AllProducts from './components/products/AllProducts';
+import Search from './components/Search';
 function App() {
   return (
     <Routes>
@@ -15,13 +16,11 @@ function App() {
       <Route path='/details/:id' element={<Details />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
-      <Route path='/booknow/:id' element={<Booknow />} />
+      <Route path='/booknow/:id' element={<Booknow />} /> 
       <Route path='/bookingform/:id' element={<BookingForm />} />
       <Route path='/checkout/:id' element={<Checkout />} />
       <Route path='/AllProducts' element={<AllProducts />} />
-
-
-
+      <Route path='/search/:model/:price' element={<Search />} />
     </Routes>
   );
 

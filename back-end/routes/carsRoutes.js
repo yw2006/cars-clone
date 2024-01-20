@@ -1,15 +1,37 @@
-import { getcars } from '../utils/database.js';
+import { getcars, getDetails,searchCars } from "../utils/database.js";
 import { Router } from "express";
 const router = Router();
 
-router.get('/cars', async (req, res) => {
-    try {
-        const cars = await getcars();
-        res.json(cars);
-    } catch (err) {
-        console.error('Error fetching cars data:', err);
-        res.status(500).json({ err: 'Internal Server Error' });
-    }
+router.get("/cars", async (req, res) => {
+  try {
+    const cars = await getcars();
+    res.json(cars);
+  } catch (err) {
+    console.error("Error fetching cars data:", err);
+    res.status(500).json({ err: "Internal Server Error" });
+  }
+});
+router.get("/carsDetails/:id", async (req, res) => {
+  try {
+    const car_id = req.params.id;
+    const details = await getDetails(car_id);
+    res.json(details);
+  } catch (error) {
+    console.error("Error fetching cars data:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+router.get('/search/:model/:price', async (req, res) => {
+  try {
+    // const type = req.query.type;
+    const model = req.params.model;
+    const price = req.params.price;
+    const searched_cars = await searchCars(model, price);
+    res.json(searched_cars);
+  } catch (error) {
+    console.error("Error fetching cars data:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 });
 
 

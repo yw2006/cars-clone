@@ -1,7 +1,19 @@
-import React from "react";
+import {React, useState} from "react";
 import LandingIM from "./util/images/landing.png";
-
+import { Link } from "react-router-dom";
 function Landing() {
+  // const [selectedType, setSelectedType] = useState('new');
+  const [selectedModel, setSelectedModel] = useState('sedan');
+  const [selectedPrice, setSelectedPrice] = useState('100000');
+  // const handleTypeChange = (event) => {
+  //   setSelectedType(event.target.value);
+  // };
+  const handleModelChange = (event) => {
+    setSelectedModel(event.target.value);
+  };
+  const handlePriceChange = (event) => {
+    setSelectedPrice(event.target.value);
+  };
   return (
     <>
       <div className="container-fluid  mb-5">
@@ -12,92 +24,60 @@ function Landing() {
             <form className="">
               <div className="form-control row d-inline-flex">
                 <div className="col-md-3">
-                  <select className="form-select" data-placeholder="Used Cars">
-                    <option value="used" className="">
-                      used
-                    </option>
-                    <option value="used" className="">
+                  <select className="form-select" data-placeholder="Used Cars" >
+                    <option value="new" className="">
                       new
                     </option>
                   </select>
                 </div>
                 <div className="col-md-3">
-                  <select className="form-select" aria-placeholder="model">
-                    <option value="used" className="">
-                      Bentley
+                  <select className="form-select" aria-placeholder="model" onChange={handleModelChange}>
+                    <option value="sedan" className="">
+                      sedan
                     </option>
-                    <option value="used" className="">
-                      BMW
+                    <option value="Hatchback" className="">
+                    Hatchback
                     </option>
-                    <option value="used" className="">
-                      mercedes
+                    <option value="SUV" className="">
+                    SUV
                     </option>
-                    <option value="used" className="">
-                      porshe
-                    </option>
-                    <option value="used" className="">
-                      mclaren
-                    </option>
-                    <option value="used" className="">
-                      lamborghini
-                    </option>
-                    <option value="used" className="">
-                      audi
-                    </option>
-                    <option value="used" className="">
-                      ferrari
-                    </option>
-                    <option value="used" className="">
-                      hyundai
-                    </option>
-                    <option value="used" className="">
-                      kia
-                    </option>
-                    <option value="used" className="">
-                      daihatsu
-                    </option>
-                    <option value="used" className="">
-                      lotus
-                    </option>
-                    <option value="used" className="">
-                      ford
-                    </option>
+                    
                   </select>
                 </div>
                 <div className="col-md-3  d-inline-flex">
-                <select className="form-select" aria-placeholder="model">
-                    <option value="used" className="">
-                      0 : 100,000
+                <select className="form-select" aria-placeholder="model" onChange={handlePriceChange}>
+                    <option value="100000" className="">
+                      100,000
                     </option>
-                    <option value="used" className="">
-                      100,000 : 250,000
+                    <option value="250000" className="">
+                      250,000
                     </option>
-                    <option value="used" className="">
-                      250,000 : 500,000
+                    <option value="500000" className="">
+                      500,000
                     </option>
-                    <option value="used" className="">
-                      500,000 : 750,000
+                    <option value="750000" className="">
+                      750,000
                     </option>
-                    <option value="used" className="">
-                      750,000 : 1,500,000
+                    <option value="1500000" className="">
+                      1,500,000
                     </option>
-                    <option value="used" className="">
-                      1,500,000 : 3,000,000
+                    <option value="3000000" className="">
+                      3,000,000
                     </option>
-                    <option value="used" className="">
-                      3,000,000 : 10,000,000
+                    <option value="10000000" className="">
+                      10,000,000
                     </option>
-                    <option value="used" className="">
-                      10,000,000 : 20,000,000
+                    <option value="20000000" className="">
+                      20,000,000
                     </option>
                     
                     
                   </select>
                 </div>
                 <div className="col-md-3 search-btn">
-                  <button className="btn btn-primary search-button" type="submit">
+                  <Link className="btn btn-primary search-button" type="submit" to={`/search/${selectedModel}/${selectedPrice}`}>
                     Search
-                  </button>
+                  </Link>
                 </div>
               </div>
             </form>
