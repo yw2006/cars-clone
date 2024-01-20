@@ -117,8 +117,8 @@ export default function CardDetails() {
                   <div className="info-buttons">
                     <button>{year}</button>
                     <button>{details.stock} miles</button>
-                    {/* <button>{details.manual_auto}</button>
-                                    <button>{details.oil}</button> */}
+                    <button>{details.type}</button>
+                                    {/* <button>{details.oil}</button> */}
                   </div>
                 </div>
                 {/* the social links */}
@@ -291,7 +291,7 @@ export default function CardDetails() {
                                                 </svg>{" "}
                                                 Mileage
                                             </td>
-                                            <td>{details.miles}</td>
+                                            <td>0</td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -308,7 +308,7 @@ export default function CardDetails() {
                                                 </svg>{" "}
                                                 Fuel Type
                                             </td>
-                                            <td>{details.oil}</td>
+                                            <td>{details.type}</td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -324,7 +324,7 @@ export default function CardDetails() {
                                                 </svg>{" "}
                                                 Year
                                             </td>
-                                            <td>unknown</td>
+                                            <td>{year}</td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -340,7 +340,7 @@ export default function CardDetails() {
                                                 </svg>{" "}
                                                 Transmission
                                             </td>
-                                            <td>{details.manual_auto}</td>
+                                            <td>{details.transmission}</td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -426,9 +426,9 @@ export default function CardDetails() {
                                                     <path d="M8.538 1.02a.5.5 0 1 0-.076.998 6 6 0 1 1-6.445 6.444.5.5 0 0 0-.997.076A7 7 0 1 0 8.538 1.02" />
                                                     <path d="M7.096 7.828a.5.5 0 0 0 .707-.707L2.707 2.025h2.768a.5.5 0 1 0 0-1H1.5a.5.5 0 0 0-.5.5V5.5a.5.5 0 0 0 1 0V2.732z" />
                                                 </svg>{" "}
-                                                Cylinder
+                                                Max speed
                                             </td>
-                                            <td>unknown</td>
+                                            <td>{details.max_speed}</td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -475,21 +475,11 @@ export default function CardDetails() {
                     <section className="container desc">
                         <h2 className="my-2">Description</h2>
                         <p className="my-2">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias
-                            quisquam id tempore dolore laboriosam tenetur, quibusdam hic
-                            aspernatur cupiditate fugit minus voluptas animi. Eligendi
-                            excepturi voluptatibus soluta, harum odit dolor.
+                            {
+                              details.long_description
+                            }
                         </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Repellendus dignissimos officia libero unde soluta necessitatibus
-                            facere ea totam distinctio reiciendis nam reprehenderit vel cum
-                            illum porro architecto, quam vitae! Ducimus. Lorem ipsum, dolor
-                            sit amet consectetur adipisicing elit. Doloribus aperiam
-                            laboriosam, accusantium dolore, nemo ipsa beatae quas earum minus
-                            repudiandae cumque nulla? Dolor aliquid eaque impedit quo ea
-                            quisquam totam!
-                        </p>
+
                         <div className="desc-btns">
                             <button className="btn btn-lg">
                                 <svg
