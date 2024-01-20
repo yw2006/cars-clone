@@ -1,4 +1,4 @@
-import { getcars, getDetails,searchCars,getspecificcar, makeorder } from "../utils/database.js";
+import { getcars, getDetails,searchCars, makeorder, updateaddress } from "../utils/database.js";
 
 import { Router } from "express";
 const router = Router();
@@ -38,11 +38,15 @@ router.get('/search/:model/:price', async (req, res) => {
 router.post('/checkout/:id',async(req,res) => {
     try {
         const alldata = req.body
-        const order = await makeorder(alldata);
+        const car_id = req.params.id
+        const order = await makeorder({price:alldata.price,customer_id:alldata.customer_id,id:car_id});
         console.log(order)
-        console.log('order booked')
+        const update=await updateaddress(alldata.address_1,alldata.address_2,alldata.customer_id)
+        console.log(update)
     } catch (err) {
         console.log('error in order',err)
     }
 })
+
+
 export default router;

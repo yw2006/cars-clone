@@ -80,7 +80,7 @@ return res[0];
 export const makeorder = async (alldata) => {
   const res = await DBConnection.query(
     "INSERT INTO `order`(`order_price`, `quantity`, `customer_id`, `car_id`,`created_at`) VALUES (?,?,?,?,?)",
-    [alldata.cars[0][0].price,1,9,alldata.cars[0][0].car_id,null]
+    [alldata.price,1,alldata.customer_id,alldata.id,null]
   );
   return res;
 }
@@ -91,4 +91,3 @@ export const updateaddress = async (address_1,address_2,id)=>{
   );
   return res;
 }
-
