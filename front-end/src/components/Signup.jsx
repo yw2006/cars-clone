@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios'
+import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 export default function Signup() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -88,7 +90,8 @@ export default function Signup() {
     // Continue with your signup logic
     // ...
     const res=await axios.post("http://localhost:5000/signup",{name,age:getAge(age),email,phone,password,address_1:address,address_2:secondAddress,gender});
-    console.log(res.data.token)
+    console.log(res);
+
     // Clear form fields after successful submission (optional)
     setName("");
     setPhone("");
@@ -104,6 +107,7 @@ export default function Signup() {
   
   return (
     <div className="login-container">
+      <Navbar/>
       <div className="form2">
         <div className="text-center">
           <div className="title">Welcome</div>
@@ -251,6 +255,7 @@ export default function Signup() {
         <button className="submit" type="submit" onClick={handleSubmit}>
           Submit
         </button>
+        <Link to="/signin">signin</Link>
       </div>
     </div>
   );

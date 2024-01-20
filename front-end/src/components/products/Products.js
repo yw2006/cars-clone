@@ -118,8 +118,8 @@ function Products() {
                     </Carousel>
                 </TabPanel>
             </Tabs>
-            <div style={{ textAlign: 'center', marginTop: '10px' }}>
-                <a href='/AllProducts' className='btn btn-dark'>All Products</a>
+            <div style={{ marginLeft:20, marginTop:5 }}>
+                <a href='/AllProducts' className=' display-4 '>more....</a>
             </div>
         </div>
     );

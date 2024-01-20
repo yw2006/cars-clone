@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 export default function Login() {
   const [email, setEmailname] = useState("");
   const [password, setPassword] = useState("");
@@ -33,6 +35,7 @@ export default function Login() {
     // Continue with your login logic
     // ...
     const res=await axios.post("http://localhost:5000/signin",{email,password});
+    console.log(res);
     localStorage.setItem("token", res.data.token);
     
     // Clear form fields after successful submission (optional)
@@ -44,6 +47,7 @@ export default function Login() {
 
   return (
     <div className="login-cont">
+      <Navbar/>
       <div className="form-container">
         <p className="title">Login</p>
         <form className="form" onSubmit={handleSubmit}>
@@ -74,6 +78,7 @@ export default function Login() {
           <button className="sign mt-3" type="submit">
             Sign in
           </button>
+          <Link to="/signup">signup</Link>
         </form>
         {/* Rest of your component */}
       </div>
