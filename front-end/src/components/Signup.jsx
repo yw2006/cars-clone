@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import axios from 'axios'
 export default function Signup() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -9,9 +9,19 @@ export default function Signup() {
   const [age, setAge] = useState("");
   const [address, setAddress] = useState("");
   const [secondAddress, setSecondAddress] = useState("");
+  const [gender,setGender]=useState('male');
   const [errors, setErrors] = useState({});
-
-  const handleNameChange = (e) => {
+  function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  }
+  const handleNameChange = async (e) => {
     setName(e.target.value);
   };
 
@@ -42,8 +52,10 @@ export default function Signup() {
   const handleSecondAddressChange = (e) => {
     setSecondAddress(e.target.value);
   };
-
-  const handleSubmit = (e) => {
+  const handleGenderChange = (e)=>{
+    setGender(e.target.value);
+  }
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Basic validation
@@ -63,11 +75,8 @@ export default function Signup() {
     if (password2.trim() === "") {
       newErrors.password2 = "Confirm Password is required";
     }
-    if (password2 != password) {
+    if (password2 !== password) {
       newErrors.password2 = "this must be the same password";
-    }
-    if (address.trim() === "") {
-      newErrors.address = "first address is required";
     }
     // Add more validation rules for other fields as needed...
 
@@ -78,7 +87,8 @@ export default function Signup() {
 
     // Continue with your signup logic
     // ...
-
+    const res=await axios.post("http://localhost:5000/signup",{name,age:getAge(age),email,phone,password,address_1:address,address_2:secondAddress,gender});
+    console.log(res.data.token)
     // Clear form fields after successful submission (optional)
     setName("");
     setPhone("");
@@ -89,8 +99,9 @@ export default function Signup() {
     setAddress("");
     setSecondAddress("");
     setErrors({});
+    setGender("male");
   };
-
+  
   return (
     <div className="login-container">
       <div className="form2">
@@ -100,9 +111,6 @@ export default function Signup() {
         </div>
 
         <div className="input-container ic1">
-
-          <input placeholder="" type="text" className="input" id="name"  />
-
           <input
             placeholder=""
             type="text"
@@ -231,6 +239,12 @@ export default function Signup() {
             <label className="iLabel" htmlFor="second-address">
               Second Address
             </label>
+          </div>
+          <div className="input-container ic2">
+            <select class="input" onChange={handleGenderChange}>
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select>
           </div>
         </div>
 

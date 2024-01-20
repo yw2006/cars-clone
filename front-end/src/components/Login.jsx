@@ -1,25 +1,25 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 export default function Login() {
-  const [username, setUsername] = useState("");
+  const [email, setEmailname] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
 
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
+  const handleEmailChange = (e) => {
+    setEmailname(e.target.value);
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Basic validation
     const newErrors = {};
-    if (username.trim() === "") {
-      newErrors.username = "Username is required";
+    if (email.trim() === "") {
+      newErrors.username = "email is required";
     }
     if (password.trim() === "") {
       newErrors.password = "Password is required";
@@ -32,11 +32,14 @@ export default function Login() {
 
     // Continue with your login logic
     // ...
-
+    const res=await axios.post("http://localhost:5000/signin",{email,password});
+    localStorage.setItem("token", res.data.token);
+    
     // Clear form fields after successful submission (optional)
-    setUsername("");
+    setEmailname("");
     setPassword("");
     setErrors({});
+    
   };
 
   return (
@@ -45,14 +48,14 @@ export default function Login() {
         <p className="title">Login</p>
         <form className="form" onSubmit={handleSubmit}>
           <div className="input-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">email</label>
             <input
               type="text"
-              name="username"
+              name="email"
               id="username"
               placeholder=""
-              value={username}
-              onChange={handleUsernameChange}
+              value={email}
+              onChange={handleEmailChange}
             />
             {errors.username && <div className="error">{errors.username}</div>}
           </div>
@@ -67,13 +70,8 @@ export default function Login() {
               onChange={handlePasswordChange}
             />
             {errors.password && <div className="error">{errors.password}</div>}
-            <div className="forgot">
-              <a rel="noopener noreferrer" href="#">
-                Forgot Password ?
-              </a>
-            </div>
           </div>
-          <button className="sign" type="submit">
+          <button className="sign mt-3" type="submit">
             Sign in
           </button>
         </form>
