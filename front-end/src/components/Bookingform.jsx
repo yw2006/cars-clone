@@ -12,15 +12,17 @@ function Bookingform() {
   };
   const [bookdetails, setBookdetails] = useState([]);
   const { id } = useParams();
-  const selectedItem = stock.find((item) => item.id === id);
-  useEffect(() => {
-    setBookdetails(selectedItem);
-  }, [selectedItem]);
+  const getData= async()=>{
+    try {
+        const response = await axios.get(`http://localhost:5000/carsDetails/${id}`);
+        setBookdetails(response.data[0])
+    } catch (err) {
+        console.log("error in fetching data",err)
+        return "error 404"
+    }
+
+}
   const [cars, setCars] = useState({});
-  const getData = async () => {
-    const response = await axios.get(`http://localhost:5000/cars/${id}`);
-    setCars(response.data);
-  };
   useEffect(() => {
     getData();
   }, []);
@@ -274,11 +276,11 @@ function Bookingform() {
             </div>
             <div className="col-xs-12 m-auto ">
               <h6>Name</h6>
-              <h6 className="d-inline  mt-3">{}</h6>
+              <h6 className="d-inline  mt-3">{bookdetails.name}</h6>
             </div>
             <div className="col-xs-12 m-auto ">
               <h6>price</h6>
-              <h6 className="d-inline "> {}</h6>
+              <h6 className="d-inline "> ${bookdetails.price}</h6>
             </div>
             <div className="col-xs-12 text-center">
               <button

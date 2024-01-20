@@ -3,13 +3,25 @@ import { stock } from './products/data';
 import { useParams } from 'react-router-dom';
 import './booknow.css';
 import { VehiclesTypes } from './util/Footer';
+import axios from 'axios';
 function Booknow() {
     const [bookdetails, setBookdetails] = useState([]);
     const { id } = useParams();
-    const selectedItem = stock.find((item) => item.id === id);
+
+        const getData= async()=>{
+            try {
+                const response = await axios.get(`http://localhost:5000/carsDetails/${id}`);
+                setBookdetails(response.data[0])
+            } catch (err) {
+                console.log("error in fetching data",err)
+                return "error 404"
+            }
+
+        }
+
     useEffect(() => {
-        setBookdetails(selectedItem);
-    }, [selectedItem]);
+        getData()
+    }, []);
     return (
         <div className='card-details-main h-100 p-3'>
             <nav class="navbar navbar-expand-lg navbar-dark nov mb-5">
@@ -133,7 +145,7 @@ function Booknow() {
                             <h6 className='d-inline text-center'>{bookdetails.price}</h6>
                         </div>
                         <div className='col-xs-12 text-center'>
-                            <a href={`/bookingform/${bookdetails.id}`}><button className='w-100 btn btn-primary mt-4'>Continue Booking</button></a>
+                            <a href={`/bookingform/${id}`}><button className='w-100 btn btn-primary mt-4'>Continue Booking</button></a>
                         </div>
                     </div>
                 </div>

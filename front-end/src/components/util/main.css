@@ -36,6 +36,8 @@
 
 .img3 {
   border-radius: 15px;
+  aspect-ratio: 3/4;
+  object-fit: contain;
 }
 .links{
   font-size: 17px;
