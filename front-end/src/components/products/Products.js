@@ -28,6 +28,9 @@ function Products() {
             price={item.price}
             car_id={item.car_id}
             description={item.description}
+            max_speed={item.max_speed}
+            type ={item.type}
+            transmission ={item.transmission}
         />
     ));
 
@@ -41,6 +44,9 @@ function Products() {
                 price={item.price}
                 car_id={item.car_id}
                 description={item.description}
+                max_speed={item.max_speed}
+                type ={item.type}
+                transmission ={item.transmission}
             />
         ));
 
@@ -52,7 +58,9 @@ function Products() {
             price={item.price}
             car_id={item.car_id}
             description={item.description}
-
+            max_speed={item.max_speed}
+            type ={item.type}
+            transmission ={item.transmission}
         />
 
     ))
@@ -67,7 +75,9 @@ function Products() {
             price={item.price}
             car_id={item.car_id}
             description={item.description}
-
+            max_speed={item.max_speed}
+            type ={item.type}
+            transmission ={item.transmission}
         />
     ))
 

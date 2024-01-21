@@ -28,13 +28,13 @@ export function Product(props) {
                     </svg>
 
                     <span className=" col " style={{ margin: '0 31px' }}>
-                        500
+                        {props.max_speed}
                     </span>
                     <span className=" col" style={{ margin: '0 31px' }}>
-                        oil
+                        {props.type}
                     </span>
                     <span className="col" style={{ margin: '0 31px' }}>
-                        auto
+                    {props.transmission}
                     </span>
                 </li>
             </ul>
