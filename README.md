@@ -29,7 +29,7 @@ This project is a full-stack web application for booking cars. Users can browse 
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/your-username/car-booking-website.git](https://github.com/yw2006/cars-clone)
+   git clone https://github.com/your-username/car-booking-website.git
    ```
 
 2. Navigate to the project directory:
