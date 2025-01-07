@@ -49,18 +49,9 @@ function Bookingform() {
     if (!address_1?.trim()) {
       newErrors.addressone = "Address one is required";
       isValid = false;
-    } else if (!/^[A-Za-z]+$/.test(address_2)) {
-      newErrors.addressone = "Address should contain letters ";
-      isValid = false;
-    }
+    } 
 
     // Validation for Last Name
-    if (address_2) {
-      if (!/^[a-z]+$/.test(address_2)) {
-        newErrors.addresstwo = "address two should contain letters";
-        isValid = false;
-      }
-    }
 
     // Validation for ZIP Code
     // if (!formData.zipCode.trim()) {
